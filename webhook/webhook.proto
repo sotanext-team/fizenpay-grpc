@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package webhook;
+
+service WebhookService {
+  rpc findOne (WebhookById) returns (Webhook) {}
+}
+
+message WebhookById {
+  int32 id = 1;
+}
+
+message Webhook {
+  int32 id = 1;
+  string name = 2;
+}
