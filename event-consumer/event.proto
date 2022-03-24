@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package event_consumer;
+
+import "google/protobuf/timestamp.proto";
+
+service Event {
+	rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse);
+}
+
+message Actor {
+  string id = 1;
+  string name = 2;
+  string ipAddress = 3;
+  string type = 4;
+}
+
+message Target {
+  string id = 1;
+  string type = 2;
+}
+
+message DataChanged {
+  string before = 1;
+  string after = 2;
+}
+
+message CreateEventRequest {
+  string eventType = 1;
+  Actor actor = 2;
+  Target target = 3;
+  DataChanged dataChanged = 4;
+}
+
+message CreateEventResponse {
+  string id = 1;
+  string eventType = 2;
+  Actor actor = 3;
+  Target target = 4;
+  DataChanged dataChanged = 5;
+  google.protobuf.Timestamp createdAt = 6;
+  google.protobuf.Timestamp updatedAt = 7;
+  google.protobuf.Timestamp eventAt = 8;
+}

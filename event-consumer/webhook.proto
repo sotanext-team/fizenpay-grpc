@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package event_consumer;
+
+service Webhook {
+  rpc findOne (WebhookById) returns (WebhookResponse) {}
+}
+
+message WebhookById {
+  int32 id = 1;
+}
+
+message WebhookResponse {
+  int32 id = 1;
+  string name = 2;
+}
