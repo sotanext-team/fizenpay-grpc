@@ -4,8 +4,8 @@ package event_consumer;
 
 import "google/protobuf/timestamp.proto";
 
-service Event {
-	rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse);
+service EventService {
+	rpc createEvent (CreateEventRequest) returns (CreateEventResponse);
 }
 
 message Actor {

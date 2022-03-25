@@ -36,6 +36,6 @@ export interface CreateEventResponse {
   eventAt: Date | undefined;
 }
 
-export interface Event {
-  CreateEvent(request: CreateEventRequest): Promise<CreateEventResponse>;
+export interface EventService {
+  createEvent(request: CreateEventRequest): Promise<CreateEventResponse>;
 }

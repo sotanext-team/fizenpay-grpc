@@ -10,6 +10,6 @@ export interface WebhookResponse {
   name: string;
 }
 
-export interface Webhook {
+export interface WebhookService {
   findOne(request: WebhookById): Promise<WebhookResponse>;
 }
