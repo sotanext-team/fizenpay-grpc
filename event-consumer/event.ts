@@ -9,6 +9,7 @@ export namespace event_consumer {
     export interface EventService {
         createEvent(data: CreateEventRequest, metadata?: Metadata): Observable<CreateEventResponse>;
         findOne(data: CreateEventRequest, metadata?: Metadata): Observable<CreateEventResponse>;
+        findTwo(data: CreateEventRequest, metadata?: Metadata): Observable<CreateEventResponse>;
     }
     export interface EventById {
         id?: number;

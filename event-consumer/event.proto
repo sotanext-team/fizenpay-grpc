@@ -5,8 +5,9 @@ package event_consumer;
 import "google/protobuf/timestamp.proto";
 
 service EventService {
-	rpc createEvent (CreateEventRequest) returns (CreateEventResponse) {};
-  rpc findOne (CreateEventRequest) returns (CreateEventResponse) {}
+	rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse) {};
+  rpc FindOne (CreateEventRequest) returns (CreateEventResponse) {}
+  rpc FindTwo (CreateEventRequest) returns (CreateEventResponse) {}
 }
 
 message EventById {
