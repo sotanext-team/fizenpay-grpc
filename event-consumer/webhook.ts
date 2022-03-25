@@ -8,7 +8,6 @@ import { Metadata } from '@grpc/grpc-js';
 export namespace event_consumer {
     export interface WebhookService {
         findOne(data: WebhookById, metadata?: Metadata): Observable<WebhookResponse>;
-        createEvent(data: CreateEventRequest, metadata?: Metadata): Observable<CreateEventResponse>;
     }
     export interface WebhookById {
         id?: number;
@@ -16,36 +15,6 @@ export namespace event_consumer {
     export interface WebhookResponse {
         id?: number;
         name?: string;
-    }
-    export interface Actor {
-        id?: string;
-        name?: string;
-        ipAddress?: string;
-        type?: string;
-    }
-    export interface Target {
-        id?: string;
-        type?: string;
-    }
-    export interface DataChanged {
-        before?: string;
-        after?: string;
-    }
-    export interface CreateEventRequest {
-        eventType?: string;
-        actor?: event_consumer.Actor;
-        target?: event_consumer.Target;
-        dataChanged?: event_consumer.DataChanged;
-    }
-    export interface CreateEventResponse {
-        id?: string;
-        eventType?: string;
-        actor?: event_consumer.Actor;
-        target?: event_consumer.Target;
-        dataChanged?: event_consumer.DataChanged;
-        createdAt?: google.protobuf.Timestamp;
-        updatedAt?: google.protobuf.Timestamp;
-        eventAt?: google.protobuf.Timestamp;
     }
 }
 export namespace google {
