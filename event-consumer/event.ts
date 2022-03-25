@@ -8,7 +8,7 @@ import { Metadata } from '@grpc/grpc-js';
 export namespace event_consumer {
     export interface EventService {
         createEvent(data: CreateEventRequest, metadata?: Metadata): Observable<CreateEventResponse>;
-        findOne(data: EventById, metadata?: Metadata): Observable<EventResponse>;
+        findOne(data: CreateEventRequest, metadata?: Metadata): Observable<CreateEventResponse>;
     }
     export interface EventById {
         id?: number;

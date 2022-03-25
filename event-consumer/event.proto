@@ -6,7 +6,7 @@ import "google/protobuf/timestamp.proto";
 
 service EventService {
 	rpc createEvent (CreateEventRequest) returns (CreateEventResponse) {};
-  rpc findOne (EventById) returns (EventResponse) {}
+	rpc findOne (CreateEventRequest) returns (CreateEventResponse) {};
 }
 
 message EventById {
