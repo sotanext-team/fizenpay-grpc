@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Metadata } from '@grpc/grpc-js';
 
 export namespace fizenpay_be {
-    export interface WebhookService {
+    export interface ChargeService {
         getOne(data: GetOneRequest, metadata?: Metadata): Observable<ChargeResponse>;
     }
     export interface GetOneRequest {

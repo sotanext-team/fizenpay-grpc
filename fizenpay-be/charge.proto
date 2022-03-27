@@ -5,7 +5,7 @@ package fizenpay_be;
 import "google/protobuf/timestamp.proto";
 
 
-service WebhookService {
+service ChargeService {
   rpc GetOne (GetOneRequest) returns (ChargeResponse) {}
 }
 
