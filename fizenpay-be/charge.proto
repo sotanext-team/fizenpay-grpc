@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package event_consumer;
+package fizenpay_be;
 
 import "google/protobuf/timestamp.proto";
 
