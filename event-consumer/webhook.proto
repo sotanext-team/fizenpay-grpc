@@ -30,6 +30,7 @@ message SubscribeWebhookResponse {
 message UnsubscribeWebhookRequest {
   string userId = 1;
   string webhookId = 2;
+  string url = 3;
 }
 
 message WebhookResponse {
