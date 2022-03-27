@@ -27,6 +27,7 @@ export namespace event_consumer {
     export interface UnsubscribeWebhookRequest {
         userId?: string;
         webhookId?: string;
+        url?: string;
     }
     export interface WebhookResponse {
         id?: string;
