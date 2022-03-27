@@ -19,6 +19,7 @@ message FindAllRequest {
 message SubscribeWebhookRequest {
   string userId = 1;
   string webhookId = 2;
+  string url = 3;
 }
 
 message SubscribeWebhookResponse {
@@ -34,6 +35,7 @@ message UnsubscribeWebhookRequest {
 message WebhookResponse {
   string id = 1;
   string topic = 2;
+  repeated string urls = 3;
 }
 
 message WebhooksResponse {

@@ -18,6 +18,7 @@ export namespace event_consumer {
     export interface SubscribeWebhookRequest {
         userId?: string;
         webhookId?: string;
+        url?: string;
     }
     export interface SubscribeWebhookResponse {
         userId?: string;
@@ -30,6 +31,7 @@ export namespace event_consumer {
     export interface WebhookResponse {
         id?: string;
         topic?: string;
+        urls?: string[];
     }
     export interface WebhooksResponse {
         webhooks?: event_consumer.WebhookResponse[];
