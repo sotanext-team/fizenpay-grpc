@@ -19,6 +19,10 @@ export namespace event_consumer {
         userId?: string;
         webhookId?: string;
     }
+    export interface SubscribeWebhookResponse {
+        userId?: string;
+        webhooks?: event_consumer.WebhookResponse[];
+    }
     export interface UnsubscribeWebhookRequest {
         userId?: string;
         webhookId?: string;

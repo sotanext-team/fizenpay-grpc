@@ -21,6 +21,11 @@ message SubscribeWebhookRequest {
   string webhookId = 2;
 }
 
+message SubscribeWebhookResponse {
+  string userId = 1;
+  repeated WebhookResponse webhooks = 2;
+}
+
 message UnsubscribeWebhookRequest {
   string userId = 1;
   string webhookId = 2;
