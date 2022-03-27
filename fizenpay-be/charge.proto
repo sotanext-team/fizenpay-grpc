@@ -10,7 +10,7 @@ service ChargeService {
 }
 
 message GetOneRequest {
-    string id = 1;
+    string code = 1;
 }
 
 message ChargeResponse {
@@ -22,4 +22,5 @@ message ChargeResponse {
     string cancelUrl = 6;
     string userId = 7;
     string status = 8;
+    string code = 9;
 }

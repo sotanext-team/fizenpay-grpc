@@ -10,7 +10,7 @@ export namespace fizenpay_be {
         getOne(data: GetOneRequest, metadata?: Metadata): Observable<ChargeResponse>;
     }
     export interface GetOneRequest {
-        id?: string;
+        code?: string;
     }
     export interface ChargeResponse {
         id?: string;
@@ -21,6 +21,7 @@ export namespace fizenpay_be {
         cancelUrl?: string;
         userId?: string;
         status?: string;
+        code?: string;
     }
 }
 export namespace google {
