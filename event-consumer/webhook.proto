@@ -6,7 +6,7 @@ import "google/protobuf/timestamp.proto";
 
 
 service WebhookService {
-  rpc SubscribeWebhook (SubscribeWebhookRequest) returns (WebhookResponse) {}
+  rpc SubscribeWebhook (SubscribeWebhookRequest) returns (SubscribeWebhookResponse) {}
   rpc FindAllTypes (Empty) returns (WebhooksResponse) {}
   rpc FindAll (FindAllRequest) returns (WebhooksResponse) {}
   rpc UnsubscribeWebhook (UnsubscribeWebhookRequest) returns (UnsubscribeWebhookResponse) {}
