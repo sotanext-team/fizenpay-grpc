@@ -7,14 +7,21 @@ import { Metadata } from '@grpc/grpc-js';
 
 export namespace event_consumer {
     export interface WebhookService {
-        findOne(data: WebhookById, metadata?: Metadata): Observable<WebhookResponse>;
-        subscribeWebhook(data: WebhookById, metadata?: Metadata): Observable<WebhookResponse>;
+        subscribeWebhook(data: SubscribeWebhookRequest, metadata?: Metadata): Observable<WebhookResponse>;
         findAllTypes(data: Empty, metadata?: Metadata): Observable<WebhooksResponse>;
-        findAll(data: Empty, metadata?: Metadata): Observable<WebhooksResponse>;
-        unsubscribeWebhook(data: WebhookById, metadata?: Metadata): Observable<UnsubscribeWebhookResponse>;
+        findAll(data: FindAllRequest, metadata?: Metadata): Observable<WebhooksResponse>;
+        unsubscribeWebhook(data: UnsubscribeWebhookRequest, metadata?: Metadata): Observable<UnsubscribeWebhookResponse>;
     }
-    export interface WebhookById {
-        id?: number;
+    export interface FindAllRequest {
+        userId?: string;
+    }
+    export interface SubscribeWebhookRequest {
+        userId?: string;
+        webhookId?: string;
+    }
+    export interface UnsubscribeWebhookRequest {
+        userId?: string;
+        webhookId?: string;
     }
     export interface WebhookResponse {
         id?: number;
