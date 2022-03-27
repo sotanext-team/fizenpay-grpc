@@ -22,7 +22,7 @@ export namespace event_consumer {
     }
     export interface SubscribeWebhookResponse {
         userId?: string;
-        webhooks?: event_consumer.WebhookResponse[];
+        webhook?: event_consumer.WebhookResponse;
     }
     export interface UnsubscribeWebhookRequest {
         userId?: string;

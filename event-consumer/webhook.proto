@@ -24,7 +24,7 @@ message SubscribeWebhookRequest {
 
 message SubscribeWebhookResponse {
   string userId = 1;
-  repeated WebhookResponse webhooks = 2;
+  WebhookResponse webhook = 2;
 }
 
 message UnsubscribeWebhookRequest {
