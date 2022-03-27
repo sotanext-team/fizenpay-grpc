@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package event_consumer;
+
+import "google/protobuf/timestamp.proto";
+
+
+service WebhookService {
+  rpc GetOne (GetOneRequest) returns (ChargeResponse) {}
+}
+
+message GetOneRequest {
+    string id = 1;
+}
+
+message ChargeResponse {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    string pricingType = 4;
+    string redirectUrl = 5;
+    string cancelUrl = 6;
+    string userId = 7;
+    string status = 8;
+}
