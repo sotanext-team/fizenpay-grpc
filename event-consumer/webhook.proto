@@ -27,8 +27,8 @@ message UnsubscribeWebhookRequest {
 }
 
 message WebhookResponse {
-  int32 id = 1;
-  string name = 2;
+  string id = 1;
+  string topic = 2;
 }
 
 message WebhooksResponse {

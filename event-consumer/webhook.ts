@@ -24,8 +24,8 @@ export namespace event_consumer {
         webhookId?: string;
     }
     export interface WebhookResponse {
-        id?: number;
-        name?: string;
+        id?: string;
+        topic?: string;
     }
     export interface WebhooksResponse {
         webhooks?: event_consumer.WebhookResponse[];
