@@ -8,6 +8,10 @@ import { Metadata } from '@grpc/grpc-js';
 export namespace event_consumer {
     export interface WebhookService {
         findOne(data: WebhookById, metadata?: Metadata): Observable<WebhookResponse>;
+        subscribeWebhook(data: WebhookById, metadata?: Metadata): Observable<WebhookResponse>;
+        findAllTypes(data: Empty, metadata?: Metadata): Observable<WebhooksResponse>;
+        findAll(data: Empty, metadata?: Metadata): Observable<WebhooksResponse>;
+        unsubscribeWebhook(data: WebhookById, metadata?: Metadata): Observable<UnsubscribeWebhookResponse>;
     }
     export interface WebhookById {
         id?: number;
@@ -15,6 +19,15 @@ export namespace event_consumer {
     export interface WebhookResponse {
         id?: number;
         name?: string;
+    }
+    export interface WebhooksResponse {
+        webhooks?: event_consumer.WebhookResponse[];
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface UnsubscribeWebhookResponse {
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface Empty {
     }
 }
 export namespace google {
