@@ -42,6 +42,7 @@ message CreateEventRequest {
   Actor actor = 2;
   Target target = 3;
   DataChanged dataChanged = 4;
+  string context = 5;
 }
 
 message CreateEventResponse {

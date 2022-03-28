@@ -37,6 +37,7 @@ export namespace event_consumer {
         actor?: event_consumer.Actor;
         target?: event_consumer.Target;
         dataChanged?: event_consumer.DataChanged;
+        context?: string;
     }
     export interface CreateEventResponse {
         id?: string;
