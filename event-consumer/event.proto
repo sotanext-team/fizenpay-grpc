@@ -6,8 +6,6 @@ import "google/protobuf/timestamp.proto";
 
 service EventService {
 	rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse) {};
-  rpc FindOne (CreateEventRequest) returns (CreateEventResponse) {}
-  rpc FindTwo (CreateEventRequest) returns (CreateEventResponse) {}
 }
 
 message EventById {
@@ -18,7 +16,6 @@ message EventResponse {
   int32 id = 1;
   string name = 2;
 }
-
 
 message Actor {
   string id = 1;
