@@ -11,6 +11,7 @@ service WebhookService {
   rpc FindAllTypes (Empty) returns (WebhooksResponse) {}
   rpc FindAll (FindAllRequest) returns (FindAllResponse) {}
   rpc UnsubscribeWebhook (UnsubscribeWebhookRequest) returns (UnsubscribeWebhookResponse) {}
+  rpc UnsubscribeWebhooks (UnsubscribeWebhooksRequest) returns (UnsubscribeWebhooksResponse) {}
   rpc UpdateEndpoint (UpdateEndpointRequest) returns (UpdateEndpointResponse) {}
   rpc SendTest (SendTestRequest) returns (SendTestResponse) {}
 }
@@ -92,6 +93,15 @@ message SendTestRequest {
 }
 
 message SendTestResponse {
+
+}
+
+message UnsubscribeWebhooksRequest {
+  string userId = 1;
+  string url = 2;
+}
+
+message UnsubscribeWebhooksResponse {
 
 }
 

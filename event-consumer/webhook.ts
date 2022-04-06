@@ -12,6 +12,7 @@ export namespace event_consumer {
         findAllTypes(data: Empty, metadata?: Metadata): Observable<WebhooksResponse>;
         findAll(data: FindAllRequest, metadata?: Metadata): Observable<FindAllResponse>;
         unsubscribeWebhook(data: UnsubscribeWebhookRequest, metadata?: Metadata): Observable<UnsubscribeWebhookResponse>;
+        unsubscribeWebhooks(data: UnsubscribeWebhooksRequest, metadata?: Metadata): Observable<UnsubscribeWebhooksResponse>;
         updateEndpoint(data: UpdateEndpointRequest, metadata?: Metadata): Observable<UpdateEndpointResponse>;
         sendTest(data: SendTestRequest, metadata?: Metadata): Observable<SendTestResponse>;
     }
@@ -78,6 +79,13 @@ export namespace event_consumer {
     }
     // tslint:disable-next-line:no-empty-interface
     export interface SendTestResponse {
+    }
+    export interface UnsubscribeWebhooksRequest {
+        userId?: string;
+        url?: string;
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface UnsubscribeWebhooksResponse {
     }
     // tslint:disable-next-line:no-empty-interface
     export interface Empty {
