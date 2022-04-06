@@ -12,6 +12,7 @@ export namespace event_consumer {
         findAllTypes(data: Empty, metadata?: Metadata): Observable<WebhooksResponse>;
         findAll(data: FindAllRequest, metadata?: Metadata): Observable<WebhooksResponse>;
         unsubscribeWebhook(data: UnsubscribeWebhookRequest, metadata?: Metadata): Observable<UnsubscribeWebhookResponse>;
+        updateEndpoint(data: UpdateEndpointRequest, metadata?: Metadata): Observable<UpdateEndpointResponse>;
     }
     export interface FindAllRequest {
         userId?: string;
@@ -48,6 +49,17 @@ export namespace event_consumer {
     }
     // tslint:disable-next-line:no-empty-interface
     export interface UnsubscribeWebhookResponse {
+    }
+    export interface UpdateEndpointRequest {
+        userId?: string;
+        webhooks?: event_consumer.WebhookUpdateEndpointRequest[];
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface UpdateEndpointResponse {
+    }
+    export interface WebhookUpdateEndpointRequest {
+        topic?: string;
+        subscribe?: boolean;
     }
     // tslint:disable-next-line:no-empty-interface
     export interface Empty {
