@@ -77,8 +77,9 @@ export namespace event_consumer {
         userId?: string;
         url?: string;
     }
-    // tslint:disable-next-line:no-empty-interface
     export interface SendTestResponse {
+        status?: string;
+        responseBody?: string;
     }
     export interface UnsubscribeWebhooksRequest {
         userId?: string;

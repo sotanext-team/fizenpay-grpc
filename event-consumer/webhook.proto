@@ -93,7 +93,8 @@ message SendTestRequest {
 }
 
 message SendTestResponse {
-
+  string status = 1;
+  string responseBody = 2;
 }
 
 message UnsubscribeWebhooksRequest {
