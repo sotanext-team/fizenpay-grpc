@@ -80,6 +80,7 @@ export namespace event_consumer {
     export interface SendTestResponse {
         status?: string;
         responseBody?: string;
+        error?: string;
     }
     export interface UnsubscribeWebhooksRequest {
         userId?: string;
