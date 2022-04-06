@@ -10,13 +10,20 @@ export namespace event_consumer {
         subscribeWebhook(data: SubscribeWebhookRequest, metadata?: Metadata): Observable<SubscribeWebhookResponse>;
         subscribeWebhooks(data: SubscribeWebhooksRequest, metadata?: Metadata): Observable<SubscribeWebhooksResponse>;
         findAllTypes(data: Empty, metadata?: Metadata): Observable<WebhooksResponse>;
-        findAll(data: FindAllRequest, metadata?: Metadata): Observable<WebhooksResponse>;
+        findAll(data: FindAllRequest, metadata?: Metadata): Observable<FindAllResponse>;
         unsubscribeWebhook(data: UnsubscribeWebhookRequest, metadata?: Metadata): Observable<UnsubscribeWebhookResponse>;
         updateEndpoint(data: UpdateEndpointRequest, metadata?: Metadata): Observable<UpdateEndpointResponse>;
         sendTest(data: SendTestRequest, metadata?: Metadata): Observable<SendTestResponse>;
     }
     export interface FindAllRequest {
         userId?: string;
+    }
+    export interface FindAllResponse {
+        urls?: event_consumer.UrlsResponse[];
+    }
+    export interface UrlsResponse {
+        url?: string;
+        webhooks?: event_consumer.WebhookResponse[];
     }
     export interface SubscribeWebhookRequest {
         userId?: string;
@@ -44,6 +51,7 @@ export namespace event_consumer {
         id?: string;
         topic?: string;
         urls?: string[];
+        subscribed?: boolean;
     }
     export interface WebhooksResponse {
         webhooks?: event_consumer.WebhookResponse[];

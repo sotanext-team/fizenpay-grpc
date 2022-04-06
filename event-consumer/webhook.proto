@@ -9,7 +9,7 @@ service WebhookService {
   rpc SubscribeWebhook (SubscribeWebhookRequest) returns (SubscribeWebhookResponse) {}
   rpc SubscribeWebhooks (SubscribeWebhooksRequest) returns (SubscribeWebhooksResponse) {}
   rpc FindAllTypes (Empty) returns (WebhooksResponse) {}
-  rpc FindAll (FindAllRequest) returns (WebhooksResponse) {}
+  rpc FindAll (FindAllRequest) returns (FindAllResponse) {}
   rpc UnsubscribeWebhook (UnsubscribeWebhookRequest) returns (UnsubscribeWebhookResponse) {}
   rpc UpdateEndpoint (UpdateEndpointRequest) returns (UpdateEndpointResponse) {}
   rpc SendTest (SendTestRequest) returns (SendTestResponse) {}
@@ -17,6 +17,15 @@ service WebhookService {
 
 message FindAllRequest {
   string userId = 1;
+}
+
+message FindAllResponse {
+  repeated UrlsResponse urls = 1;
+}
+
+message UrlsResponse {
+  string url = 1;
+  repeated WebhookResponse webhooks = 2;
 }
 
 message SubscribeWebhookRequest {
@@ -50,6 +59,7 @@ message WebhookResponse {
   string id = 1;
   string topic = 2;
   repeated string urls = 3;
+  bool subscribed = 4;
 }
 
 message WebhooksResponse {
