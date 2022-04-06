@@ -69,7 +69,7 @@ export namespace event_consumer {
     }
     export interface WebhookUpdateEndpointRequest {
         topic?: string;
-        subscribe?: boolean;
+        isSubscribed?: boolean;
     }
     export interface SendTestRequest {
         topic?: string;
