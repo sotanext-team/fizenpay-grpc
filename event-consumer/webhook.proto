@@ -62,6 +62,7 @@ message UnsubscribeWebhookResponse {
 message UpdateEndpointRequest {
   string userId = 1;
   repeated WebhookUpdateEndpointRequest webhooks = 2;
+  string url = 3;
 }
 
 message UpdateEndpointResponse {

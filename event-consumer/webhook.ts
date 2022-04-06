@@ -53,6 +53,7 @@ export namespace event_consumer {
     export interface UpdateEndpointRequest {
         userId?: string;
         webhooks?: event_consumer.WebhookUpdateEndpointRequest[];
+        url?: string;
     }
     // tslint:disable-next-line:no-empty-interface
     export interface UpdateEndpointResponse {
