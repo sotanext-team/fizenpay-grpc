@@ -59,7 +59,7 @@ message WebhookResponse {
   string id = 1;
   string topic = 2;
   repeated string urls = 3;
-  bool subscribed = 4;
+  bool isSubscribed = 4;
 }
 
 message WebhooksResponse {

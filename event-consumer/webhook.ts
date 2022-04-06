@@ -51,7 +51,7 @@ export namespace event_consumer {
         id?: string;
         topic?: string;
         urls?: string[];
-        subscribed?: boolean;
+        isSubscribed?: boolean;
     }
     export interface WebhooksResponse {
         webhooks?: event_consumer.WebhookResponse[];
