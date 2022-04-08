@@ -90,6 +90,7 @@ message SendTestRequest {
   string topic = 1;
   string userId = 2;
   string url = 3;
+  string sharedSecret = 4;
 }
 
 message SendTestResponse {

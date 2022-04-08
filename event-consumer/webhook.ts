@@ -76,6 +76,7 @@ export namespace event_consumer {
         topic?: string;
         userId?: string;
         url?: string;
+        sharedSecret?: string;
     }
     export interface SendTestResponse {
         status?: string;
