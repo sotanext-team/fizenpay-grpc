@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package fizenpay_admin_be;
+
+service SettingsService {
+  rpc FindAllSupportedChains (Empty) returns (SupportedChainsResponse) {}
+}
+
+message Empty {}
+
+message SupportedChainsResponse {
+    string bip44_path = 1;
+    string currency = 2;
+    bool is_mainnet = 3;
+    string network = 4;
+    string provider = 5;
+    string wssProvider = 6;
+    string fpMasterContract = 7;
+    string transactionUrl = 8;
+}
