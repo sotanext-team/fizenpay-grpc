@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package fizenpay_admin_be;
+package fizenpay_be;
 
 service SettingsService {
   rpc FindAllSupportedChains (Empty) returns (SupportedChainsResponse) {}

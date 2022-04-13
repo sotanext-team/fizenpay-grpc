@@ -5,7 +5,7 @@
 import { Observable } from 'rxjs';
 import { Metadata } from '@grpc/grpc-js';
 
-export namespace fizenpay_admin_be {
+export namespace fizenpay_be {
     export interface SettingsService {
         findAllSupportedChains(data: Empty, metadata?: Metadata): Observable<SupportedChainsResponse>;
     }
