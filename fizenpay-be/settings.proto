@@ -3,7 +3,7 @@ syntax = "proto3";
 package fizenpay_be;
 
 service SettingsService {
-  rpc FindAllSupportedChains (Empty) returns (SupportedChainsResponse) {}
+  rpc FindAllSupportedChains (Empty) returns (FindAllSupportedChainsResponse) {}
 }
 
 message Empty {}
