@@ -18,3 +18,7 @@ message SupportedChainsResponse {
     string fpMasterContract = 7;
     string transactionUrl = 8;
 }
+
+message FindAllSupportedChainsResponse {
+    repeated SupportedChainsResponse chains = 1;
+}

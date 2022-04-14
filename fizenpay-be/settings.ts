@@ -22,5 +22,8 @@ export namespace fizenpay_be {
         fpMasterContract?: string;
         transactionUrl?: string;
     }
+    export interface FindAllSupportedChainsResponse {
+        chains?: fizenpay_be.SupportedChainsResponse[];
+    }
 }
 
