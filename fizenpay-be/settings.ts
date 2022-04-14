@@ -7,7 +7,7 @@ import { Metadata } from '@grpc/grpc-js';
 
 export namespace fizenpay_be {
     export interface SettingsService {
-        findAllSupportedChains(data: Empty, metadata?: Metadata): Observable<SupportedChainsResponse>;
+        findAllSupportedChains(data: Empty, metadata?: Metadata): Observable<FindAllSupportedChainsResponse>;
     }
     // tslint:disable-next-line:no-empty-interface
     export interface Empty {
