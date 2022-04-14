@@ -3,14 +3,14 @@ syntax = "proto3";
 package fizenpay_be;
 
 service SettingsService {
-  rpc FindAllSupportedChain (Empty) returns (ListSupportedChains) {}
-  rpc CreateSupportedChain (SupportedChains) returns (ListSupportedChains) {}
+  rpc FindAllSupportedChain (Empty) returns (ListSupportedChain) {}
+  rpc CreateSupportedChain (SupportedChain) returns (ListSupportedChain) {}
   rpc UpdateSupportedChain (UpdateSupportedChainRequest) returns (UpdateSupportedChainResponse) {}
 }
 
 message Empty {}
 
-message SupportedChains {
+message SupportedChain {
     string bip44Path = 1;
     string currency = 2;
     bool isMainnet = 3;
@@ -21,8 +21,8 @@ message SupportedChains {
     string transactionUrl = 8;
 }
 
-message ListSupportedChains {
-    repeated SupportedChains chains = 1;
+message ListSupportedChain {
+    repeated SupportedChain chains = 1;
 }
 
 message UpdateSupportedChainRequest {
