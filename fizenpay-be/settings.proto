@@ -3,15 +3,17 @@ syntax = "proto3";
 package fizenpay_be;
 
 service SettingsService {
-  rpc FindAllSupportedChains (Empty) returns (FindAllSupportedChainsResponse) {}
+  rpc FindAllSupportedChain (Empty) returns (ListSupportedChains) {}
+  rpc CreateSupportedChain (SupportedChains) returns (ListSupportedChains) {}
+  rpc UpdateSupportedChain (UpdateSupportedChainRequest) returns (UpdateSupportedChainResponse) {}
 }
 
 message Empty {}
 
-message SupportedChainsResponse {
-    string bip44_path = 1;
+message SupportedChains {
+    string bip44Path = 1;
     string currency = 2;
-    bool is_mainnet = 3;
+    bool isMainnet = 3;
     string network = 4;
     string provider = 5;
     string wssProvider = 6;
@@ -19,6 +21,21 @@ message SupportedChainsResponse {
     string transactionUrl = 8;
 }
 
-message FindAllSupportedChainsResponse {
-    repeated SupportedChainsResponse chains = 1;
+message ListSupportedChains {
+    repeated SupportedChains chains = 1;
+}
+
+message UpdateSupportedChainRequest {
+    optional string bip44Path = 1;
+    optional string currency = 2;
+    optional bool isMainnet = 3;
+    string network = 4;
+    optional string provider = 5;
+    optional string wssProvider = 6;
+    optional string fpMasterContract = 7;
+    optional string transactionUrl = 8;
+}
+
+message UpdateSupportedChainResponse {
+    int32 affected = 1;
 }

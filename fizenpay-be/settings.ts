@@ -7,12 +7,14 @@ import { Metadata } from '@grpc/grpc-js';
 
 export namespace fizenpay_be {
     export interface SettingsService {
-        findAllSupportedChains(data: Empty, metadata?: Metadata): Observable<FindAllSupportedChainsResponse>;
+        findAllSupportedChain(data: Empty, metadata?: Metadata): Observable<ListSupportedChains>;
+        createSupportedChain(data: SupportedChains, metadata?: Metadata): Observable<ListSupportedChains>;
+        updateSupportedChain(data: UpdateSupportedChainRequest, metadata?: Metadata): Observable<UpdateSupportedChainResponse>;
     }
     // tslint:disable-next-line:no-empty-interface
     export interface Empty {
     }
-    export interface SupportedChainsResponse {
+    export interface SupportedChains {
         bip44Path?: string;
         currency?: string;
         isMainnet?: boolean;
@@ -22,8 +24,21 @@ export namespace fizenpay_be {
         fpMasterContract?: string;
         transactionUrl?: string;
     }
-    export interface FindAllSupportedChainsResponse {
-        chains?: fizenpay_be.SupportedChainsResponse[];
+    export interface ListSupportedChains {
+        chains?: fizenpay_be.SupportedChains[];
+    }
+    export interface UpdateSupportedChainRequest {
+        bip44Path?: string;
+        currency?: string;
+        isMainnet?: boolean;
+        network?: string;
+        provider?: string;
+        wssProvider?: string;
+        fpMasterContract?: string;
+        transactionUrl?: string;
+    }
+    export interface UpdateSupportedChainResponse {
+        affected?: number;
     }
 }
 
