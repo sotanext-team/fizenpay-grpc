@@ -84,8 +84,9 @@ export namespace fizenpay_be {
     }
     export interface GetAllUserRequest {
         isPendingApproved?: string;
-        limit?: string;
-        page?: string;
+        search?: string;
+        limit?: number;
+        page?: number;
     }
 }
 export namespace google {

@@ -89,8 +89,9 @@ message GetAllUserResponse {
 
 message GetAllUserRequest {
     string isPendingApproved = 1;
-    string limit = 2;
-    string page = 3;
+    string search = 2;
+    int32 limit = 3;
+    int32 page = 4;
 }
 
 
