@@ -8,6 +8,11 @@ import { Metadata } from '@grpc/grpc-js';
 export namespace fizenpay_be {
     export interface UsersService {
         getAllUser(data: GetAllUserRequest, metadata?: Metadata): Observable<GetAllUserResponse>;
+        activateAccount(data: ActivateAccountRequest, metadata?: Metadata): Observable<Empty>;
+        deactivateAccount(data: ActivateAccountRequest, metadata?: Metadata): Observable<Empty>;
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface Empty {
     }
     export interface FlexiblePayment {
         type?: number;
@@ -85,8 +90,12 @@ export namespace fizenpay_be {
     export interface GetAllUserRequest {
         isPendingApproved?: string;
         search?: string;
+        status?: string;
         limit?: number;
         page?: number;
+    }
+    export interface ActivateAccountRequest {
+        userId?: string;
     }
 }
 export namespace google {

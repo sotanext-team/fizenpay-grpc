@@ -6,7 +6,11 @@ import "google/protobuf/timestamp.proto";
 
 service UsersService {
   rpc GetAllUser (GetAllUserRequest) returns (GetAllUserResponse) {}
+  rpc ActivateAccount (ActivateAccountRequest) returns (Empty) {}
+  rpc DeactivateAccount (ActivateAccountRequest) returns (Empty) {}
 }
+
+message Empty {}
 
 message FlexiblePayment {
     int32 type = 1;
@@ -90,8 +94,12 @@ message GetAllUserResponse {
 message GetAllUserRequest {
     string isPendingApproved = 1;
     string search = 2;
-    int32 limit = 3;
-    int32 page = 4;
+    string status = 3;
+    int32 limit = 4;
+    int32 page = 5;
 }
 
+message ActivateAccountRequest {
+    string userId = 1;
+}
 
