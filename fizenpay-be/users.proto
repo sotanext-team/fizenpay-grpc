@@ -10,8 +10,6 @@ service UsersService {
   rpc DeactivateAccount (DeactivateAccountRequest) returns (DeactivateAccountResponse) {}
 }
 
-message Empty {}
-
 message FlexiblePayment {
     int32 type = 1;
     double underPaymentThresholdValue = 2;

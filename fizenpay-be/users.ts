@@ -11,9 +11,6 @@ export namespace fizenpay_be {
         activateAccount(data: ActivateAccountRequest, metadata?: Metadata): Observable<ActivateAccountResponse>;
         deactivateAccount(data: DeactivateAccountRequest, metadata?: Metadata): Observable<DeactivateAccountResponse>;
     }
-    // tslint:disable-next-line:no-empty-interface
-    export interface Empty {
-    }
     export interface FlexiblePayment {
         type?: number;
         underPaymentThresholdValue?: number;
