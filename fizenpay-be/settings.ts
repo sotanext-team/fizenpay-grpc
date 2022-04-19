@@ -25,7 +25,8 @@ export namespace fizenpay_be {
         transactionUrl?: string;
     }
     export interface ListSupportedChain {
-        chains?: fizenpay_be.SupportedChain[];
+        items?: fizenpay_be.SupportedChain[];
+        total?: number;
     }
     export interface UpdateSupportedChainRequest {
         bip44Path?: string;
@@ -37,8 +38,8 @@ export namespace fizenpay_be {
         fpMasterContract?: string;
         transactionUrl?: string;
     }
+    // tslint:disable-next-line:no-empty-interface
     export interface UpdateSupportedChainResponse {
-        affected?: number;
     }
 }
 

@@ -22,7 +22,8 @@ message SupportedChain {
 }
 
 message ListSupportedChain {
-    repeated SupportedChain chains = 1;
+    repeated SupportedChain items = 1;
+    int32 total = 2;
 }
 
 message UpdateSupportedChainRequest {
@@ -36,6 +37,4 @@ message UpdateSupportedChainRequest {
     optional string transactionUrl = 8;
 }
 
-message UpdateSupportedChainResponse {
-    int32 affected = 1;
-}
+message UpdateSupportedChainResponse {}
