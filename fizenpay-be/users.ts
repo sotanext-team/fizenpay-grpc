@@ -8,8 +8,8 @@ import { Metadata } from '@grpc/grpc-js';
 export namespace fizenpay_be {
     export interface UsersService {
         getAllUser(data: GetAllUserRequest, metadata?: Metadata): Observable<GetAllUserResponse>;
-        activateAccount(data: ActivateAccountRequest, metadata?: Metadata): Observable<Empty>;
-        deactivateAccount(data: ActivateAccountRequest, metadata?: Metadata): Observable<Empty>;
+        activateAccount(data: ActivateAccountRequest, metadata?: Metadata): Observable<ActivateAccountResponse>;
+        deactivateAccount(data: DeactivateAccountRequest, metadata?: Metadata): Observable<DeactivateAccountResponse>;
     }
     // tslint:disable-next-line:no-empty-interface
     export interface Empty {
@@ -96,6 +96,15 @@ export namespace fizenpay_be {
     }
     export interface ActivateAccountRequest {
         userId?: string;
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface ActivateAccountResponse {
+    }
+    export interface DeactivateAccountRequest {
+        userId?: string;
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface DeactivateAccountResponse {
     }
 }
 export namespace google {

@@ -6,8 +6,8 @@ import "google/protobuf/timestamp.proto";
 
 service UsersService {
   rpc GetAllUser (GetAllUserRequest) returns (GetAllUserResponse) {}
-  rpc ActivateAccount (ActivateAccountRequest) returns (Empty) {}
-  rpc DeactivateAccount (ActivateAccountRequest) returns (Empty) {}
+  rpc ActivateAccount (ActivateAccountRequest) returns (ActivateAccountResponse) {}
+  rpc DeactivateAccount (DeactivateAccountRequest) returns (DeactivateAccountResponse) {}
 }
 
 message Empty {}
@@ -102,4 +102,12 @@ message GetAllUserRequest {
 message ActivateAccountRequest {
     string userId = 1;
 }
+
+message ActivateAccountResponse {}
+
+message DeactivateAccountRequest {
+    string userId = 1;
+}
+
+message DeactivateAccountResponse {}
 
