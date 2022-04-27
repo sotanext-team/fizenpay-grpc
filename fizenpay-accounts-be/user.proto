@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package fizenpay_accounts;
+
+import "google/protobuf/timestamp.proto";
+
+
+service UserService {
+  rpc GetOne (GetOneRequest) returns (GetOneResponse) {}
+}
+
+message GetOneRequest {
+  string email = 1;
+}
+
+message GetOneResponse {
+  string id = 1;
+  string email = 2;
+  string firstName = 3;
+  string lastName = 4;
+}
