@@ -9,12 +9,24 @@ service WebhookService {
   rpc SubscribeWebhook (SubscribeWebhookRequest) returns (SubscribeWebhookResponse) {}
   rpc SubscribeWebhooks (SubscribeWebhooksRequest) returns (SubscribeWebhooksResponse) {}
   rpc FindAllTypes (Empty) returns (WebhooksResponse) {}
-  rpc FindAll (FindAllRequest) returns (WebhooksResponse) {}
+  rpc FindAll (FindAllRequest) returns (FindAllResponse) {}
   rpc UnsubscribeWebhook (UnsubscribeWebhookRequest) returns (UnsubscribeWebhookResponse) {}
+  rpc UnsubscribeWebhooks (UnsubscribeWebhooksRequest) returns (UnsubscribeWebhooksResponse) {}
+  rpc UpdateEndpoint (UpdateEndpointRequest) returns (UpdateEndpointResponse) {}
+  rpc SendTest (SendTestRequest) returns (SendTestResponse) {}
 }
 
 message FindAllRequest {
   string userId = 1;
+}
+
+message FindAllResponse {
+  repeated UrlsResponse urls = 1;
+}
+
+message UrlsResponse {
+  string url = 1;
+  repeated WebhookResponse webhooks = 2;
 }
 
 message SubscribeWebhookRequest {
@@ -48,6 +60,7 @@ message WebhookResponse {
   string id = 1;
   string topic = 2;
   repeated string urls = 3;
+  bool isSubscribed = 4;
 }
 
 message WebhooksResponse {
@@ -55,6 +68,42 @@ message WebhooksResponse {
 }
 
 message UnsubscribeWebhookResponse {
+
+}
+
+message UpdateEndpointRequest {
+  string userId = 1;
+  repeated WebhookUpdateEndpointRequest webhooks = 2;
+  string url = 3;
+}
+
+message UpdateEndpointResponse {
+
+}
+
+message WebhookUpdateEndpointRequest {
+  string topic = 1;
+  bool isSubscribed = 2;
+}
+
+message SendTestRequest {
+  string topic = 1;
+  string userId = 2;
+  string url = 3;
+  string sharedSecret = 4;
+}
+
+message SendTestResponse {
+  string status = 1;
+  string responseBody = 2;
+}
+
+message UnsubscribeWebhooksRequest {
+  string userId = 1;
+  string url = 2;
+}
+
+message UnsubscribeWebhooksResponse {
 
 }
 

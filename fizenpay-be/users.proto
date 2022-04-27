@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package fizenpay_be;
+
+import "google/protobuf/timestamp.proto";
+
+service UsersService {
+  rpc GetAllUser (GetAllUserRequest) returns (GetAllUserResponse) {}
+  rpc ActivateAccount (ActivateAccountRequest) returns (ActivateAccountResponse) {}
+  rpc DeactivateAccount (DeactivateAccountRequest) returns (DeactivateAccountResponse) {}
+}
+
+message FlexiblePayment {
+    int32 type = 1;
+    double underPaymentThresholdValue = 2;
+    string underPaymentCurrency = 3;
+    double overPaymentThresholdValue = 4;
+    string overPaymentCurrency = 5;
+}
+
+message Wallet {
+    string bip44Path = 1;
+    string currency = 2;
+    bool isMainnet = 3;
+    string provider = 4;
+    string wssProvider = 5;
+    string network = 6;
+    string fpMasterContract = 7;
+    string transactionUrl = 8;
+    string contract = 9;
+    string address = 10;
+}
+
+message CryptoCurrency {
+    string name = 1;
+    string slug = 2;
+    string network = 3;
+    string address = 4;
+    int32 cmcId = 5;
+    int32 decimal = 6;
+    repeated string type = 7;
+    int32 gasLimit = 8;
+    bool isEnabled = 9;
+    string confirmedBalance = 10;
+    string unconfirmedBalance = 11;
+    string fizenFeeBalance = 12;
+    int32 status = 13;
+}
+
+message Security {
+    bool is2faEnabled = 1;
+    bool isEmailVerifyEnabled = 2;
+    string secret = 3;
+    string tmpSecret = 4;
+    string emailCode = 5;
+    int32 emailCodeExp = 6;
+}
+
+message User {
+    string id = 1;
+    int32 currentStep = 2;
+    bool isPendingApproved = 3;
+    string name = 4;
+    int32 autoWithdrawal = 5;
+    FlexiblePayment flexiblePaymentSettings = 6;
+    string email = 7;
+    string supportEmail = 8;
+    int32 userType = 9;
+    repeated Wallet wallets = 10;
+    repeated string backupCode = 11;
+    repeated CryptoCurrency cryptoCurrencySettings = 12;
+    int32 provider = 13;
+    string password = 14;
+    int32 status = 15;
+    string activeCode = 16;
+    string forgotPassword = 17;
+    Security security = 18;
+    string localCurrency = 19;
+    double fizenpayFeePerc = 20;
+    string sharedSecret = 21;
+    google.protobuf.Timestamp createdAt = 22;
+    google.protobuf.Timestamp requestCloseAccountAt = 23;
+    google.protobuf.Timestamp closedAccountAt = 24;
+    google.protobuf.Timestamp updateAt = 25;
+}
+
+message GetAllUserResponse {
+    repeated User items = 1;
+    int32 total = 2;
+}
+
+message GetAllUserRequest {
+    string isPendingApproved = 1;
+    string search = 2;
+    string status = 3;
+    int32 limit = 4;
+    int32 page = 5;
+}
+
+message ActivateAccountRequest {
+    string userId = 1;
+}
+
+message ActivateAccountResponse {}
+
+message DeactivateAccountRequest {
+    string userId = 1;
+}
+
+message DeactivateAccountResponse {}
+

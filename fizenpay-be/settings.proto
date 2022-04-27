@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package fizenpay_be;
+
+service SettingsService {
+  rpc FindAllSupportedChain (Empty) returns (ListSupportedChain) {}
+  rpc CreateSupportedChain (SupportedChain) returns (ListSupportedChain) {}
+  rpc UpdateSupportedChain (UpdateSupportedChainRequest) returns (UpdateSupportedChainResponse) {}
+}
+
+message Empty {}
+
+message SupportedChain {
+    string bip44Path = 1;
+    string currency = 2;
+    bool isMainnet = 3;
+    string network = 4;
+    string provider = 5;
+    string wssProvider = 6;
+    string fpMasterContract = 7;
+    string transactionUrl = 8;
+}
+
+message ListSupportedChain {
+    repeated SupportedChain items = 1;
+    int32 total = 2;
+}
+
+message UpdateSupportedChainRequest {
+    optional string bip44Path = 1;
+    optional string currency = 2;
+    optional bool isMainnet = 3;
+    string network = 4;
+    optional string provider = 5;
+    optional string wssProvider = 6;
+    optional string fpMasterContract = 7;
+    optional string transactionUrl = 8;
+}
+
+message UpdateSupportedChainResponse {}

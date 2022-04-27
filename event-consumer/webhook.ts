@@ -10,11 +10,21 @@ export namespace event_consumer {
         subscribeWebhook(data: SubscribeWebhookRequest, metadata?: Metadata): Observable<SubscribeWebhookResponse>;
         subscribeWebhooks(data: SubscribeWebhooksRequest, metadata?: Metadata): Observable<SubscribeWebhooksResponse>;
         findAllTypes(data: Empty, metadata?: Metadata): Observable<WebhooksResponse>;
-        findAll(data: FindAllRequest, metadata?: Metadata): Observable<WebhooksResponse>;
+        findAll(data: FindAllRequest, metadata?: Metadata): Observable<FindAllResponse>;
         unsubscribeWebhook(data: UnsubscribeWebhookRequest, metadata?: Metadata): Observable<UnsubscribeWebhookResponse>;
+        unsubscribeWebhooks(data: UnsubscribeWebhooksRequest, metadata?: Metadata): Observable<UnsubscribeWebhooksResponse>;
+        updateEndpoint(data: UpdateEndpointRequest, metadata?: Metadata): Observable<UpdateEndpointResponse>;
+        sendTest(data: SendTestRequest, metadata?: Metadata): Observable<SendTestResponse>;
     }
     export interface FindAllRequest {
         userId?: string;
+    }
+    export interface FindAllResponse {
+        urls?: event_consumer.UrlsResponse[];
+    }
+    export interface UrlsResponse {
+        url?: string;
+        webhooks?: event_consumer.WebhookResponse[];
     }
     export interface SubscribeWebhookRequest {
         userId?: string;
@@ -42,12 +52,42 @@ export namespace event_consumer {
         id?: string;
         topic?: string;
         urls?: string[];
+        isSubscribed?: boolean;
     }
     export interface WebhooksResponse {
         webhooks?: event_consumer.WebhookResponse[];
     }
     // tslint:disable-next-line:no-empty-interface
     export interface UnsubscribeWebhookResponse {
+    }
+    export interface UpdateEndpointRequest {
+        userId?: string;
+        webhooks?: event_consumer.WebhookUpdateEndpointRequest[];
+        url?: string;
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface UpdateEndpointResponse {
+    }
+    export interface WebhookUpdateEndpointRequest {
+        topic?: string;
+        isSubscribed?: boolean;
+    }
+    export interface SendTestRequest {
+        topic?: string;
+        userId?: string;
+        url?: string;
+        sharedSecret?: string;
+    }
+    export interface SendTestResponse {
+        status?: string;
+        responseBody?: string;
+    }
+    export interface UnsubscribeWebhooksRequest {
+        userId?: string;
+        url?: string;
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface UnsubscribeWebhooksResponse {
     }
     // tslint:disable-next-line:no-empty-interface
     export interface Empty {
