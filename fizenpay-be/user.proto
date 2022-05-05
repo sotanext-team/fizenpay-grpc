@@ -4,10 +4,21 @@ package fizenpay_be;
 
 import "google/protobuf/timestamp.proto";
 
+option go_package = "github.com/sotanext-team/fizenpay-grpc/fizenpay-be;fizenpay_be";
+
 service UsersService {
   rpc GetAllUser (GetAllUserRequest) returns (GetAllUserResponse) {}
   rpc ActivateAccount (ActivateAccountRequest) returns (ActivateAccountResponse) {}
   rpc DeactivateAccount (DeactivateAccountRequest) returns (DeactivateAccountResponse) {}
+  rpc GetOneBySession (GetOneBySessionRequest) returns (GetOneBySessionResponse) {}
+}
+
+message GetOneBySessionRequest {
+    string session = 1;
+}
+
+message GetOneBySessionResponse {
+    User user = 1;
 }
 
 message FlexiblePayment {

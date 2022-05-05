@@ -10,6 +10,13 @@ export namespace fizenpay_be {
         getAllUser(data: GetAllUserRequest, metadata?: Metadata): Observable<GetAllUserResponse>;
         activateAccount(data: ActivateAccountRequest, metadata?: Metadata): Observable<ActivateAccountResponse>;
         deactivateAccount(data: DeactivateAccountRequest, metadata?: Metadata): Observable<DeactivateAccountResponse>;
+        getOneBySession(data: GetOneBySessionRequest, metadata?: Metadata): Observable<GetOneBySessionResponse>;
+    }
+    export interface GetOneBySessionRequest {
+        session?: string;
+    }
+    export interface GetOneBySessionResponse {
+        user?: fizenpay_be.User;
     }
     export interface FlexiblePayment {
         type?: number;
