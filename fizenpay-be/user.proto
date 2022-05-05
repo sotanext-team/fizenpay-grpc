@@ -6,7 +6,7 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/sotanext-team/fizenpay-grpc/fizenpay-be;fizenpay_be";
 
-service UsersService {
+service UserService {
   rpc GetAllUser (GetAllUserRequest) returns (GetAllUserResponse) {}
   rpc ActivateAccount (ActivateAccountRequest) returns (ActivateAccountResponse) {}
   rpc DeactivateAccount (DeactivateAccountRequest) returns (DeactivateAccountResponse) {}

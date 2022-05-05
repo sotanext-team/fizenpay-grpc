@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Metadata } from '@grpc/grpc-js';
 
 export namespace fizenpay_be {
-    export interface UsersService {
+    export interface UserService {
         getAllUser(data: GetAllUserRequest, metadata?: Metadata): Observable<GetAllUserResponse>;
         activateAccount(data: ActivateAccountRequest, metadata?: Metadata): Observable<ActivateAccountResponse>;
         deactivateAccount(data: DeactivateAccountRequest, metadata?: Metadata): Observable<DeactivateAccountResponse>;

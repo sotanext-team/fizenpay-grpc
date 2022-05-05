@@ -18,194 +18,194 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// UsersServiceClient is the client API for UsersService service.
+// UserServiceClient is the client API for UserService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type UsersServiceClient interface {
+type UserServiceClient interface {
 	GetAllUser(ctx context.Context, in *GetAllUserRequest, opts ...grpc.CallOption) (*GetAllUserResponse, error)
 	ActivateAccount(ctx context.Context, in *ActivateAccountRequest, opts ...grpc.CallOption) (*ActivateAccountResponse, error)
 	DeactivateAccount(ctx context.Context, in *DeactivateAccountRequest, opts ...grpc.CallOption) (*DeactivateAccountResponse, error)
 	GetOneBySession(ctx context.Context, in *GetOneBySessionRequest, opts ...grpc.CallOption) (*GetOneBySessionResponse, error)
 }
 
-type usersServiceClient struct {
+type userServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUsersServiceClient(cc grpc.ClientConnInterface) UsersServiceClient {
-	return &usersServiceClient{cc}
+func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
+	return &userServiceClient{cc}
 }
 
-func (c *usersServiceClient) GetAllUser(ctx context.Context, in *GetAllUserRequest, opts ...grpc.CallOption) (*GetAllUserResponse, error) {
+func (c *userServiceClient) GetAllUser(ctx context.Context, in *GetAllUserRequest, opts ...grpc.CallOption) (*GetAllUserResponse, error) {
 	out := new(GetAllUserResponse)
-	err := c.cc.Invoke(ctx, "/fizenpay_be.UsersService/GetAllUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fizenpay_be.UserService/GetAllUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *usersServiceClient) ActivateAccount(ctx context.Context, in *ActivateAccountRequest, opts ...grpc.CallOption) (*ActivateAccountResponse, error) {
+func (c *userServiceClient) ActivateAccount(ctx context.Context, in *ActivateAccountRequest, opts ...grpc.CallOption) (*ActivateAccountResponse, error) {
 	out := new(ActivateAccountResponse)
-	err := c.cc.Invoke(ctx, "/fizenpay_be.UsersService/ActivateAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fizenpay_be.UserService/ActivateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *usersServiceClient) DeactivateAccount(ctx context.Context, in *DeactivateAccountRequest, opts ...grpc.CallOption) (*DeactivateAccountResponse, error) {
+func (c *userServiceClient) DeactivateAccount(ctx context.Context, in *DeactivateAccountRequest, opts ...grpc.CallOption) (*DeactivateAccountResponse, error) {
 	out := new(DeactivateAccountResponse)
-	err := c.cc.Invoke(ctx, "/fizenpay_be.UsersService/DeactivateAccount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fizenpay_be.UserService/DeactivateAccount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *usersServiceClient) GetOneBySession(ctx context.Context, in *GetOneBySessionRequest, opts ...grpc.CallOption) (*GetOneBySessionResponse, error) {
+func (c *userServiceClient) GetOneBySession(ctx context.Context, in *GetOneBySessionRequest, opts ...grpc.CallOption) (*GetOneBySessionResponse, error) {
 	out := new(GetOneBySessionResponse)
-	err := c.cc.Invoke(ctx, "/fizenpay_be.UsersService/GetOneBySession", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/fizenpay_be.UserService/GetOneBySession", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UsersServiceServer is the server API for UsersService service.
-// All implementations must embed UnimplementedUsersServiceServer
+// UserServiceServer is the server API for UserService service.
+// All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility
-type UsersServiceServer interface {
+type UserServiceServer interface {
 	GetAllUser(context.Context, *GetAllUserRequest) (*GetAllUserResponse, error)
 	ActivateAccount(context.Context, *ActivateAccountRequest) (*ActivateAccountResponse, error)
 	DeactivateAccount(context.Context, *DeactivateAccountRequest) (*DeactivateAccountResponse, error)
 	GetOneBySession(context.Context, *GetOneBySessionRequest) (*GetOneBySessionResponse, error)
-	mustEmbedUnimplementedUsersServiceServer()
+	mustEmbedUnimplementedUserServiceServer()
 }
 
-// UnimplementedUsersServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedUsersServiceServer struct {
+// UnimplementedUserServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedUserServiceServer struct {
 }
 
-func (UnimplementedUsersServiceServer) GetAllUser(context.Context, *GetAllUserRequest) (*GetAllUserResponse, error) {
+func (UnimplementedUserServiceServer) GetAllUser(context.Context, *GetAllUserRequest) (*GetAllUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllUser not implemented")
 }
-func (UnimplementedUsersServiceServer) ActivateAccount(context.Context, *ActivateAccountRequest) (*ActivateAccountResponse, error) {
+func (UnimplementedUserServiceServer) ActivateAccount(context.Context, *ActivateAccountRequest) (*ActivateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ActivateAccount not implemented")
 }
-func (UnimplementedUsersServiceServer) DeactivateAccount(context.Context, *DeactivateAccountRequest) (*DeactivateAccountResponse, error) {
+func (UnimplementedUserServiceServer) DeactivateAccount(context.Context, *DeactivateAccountRequest) (*DeactivateAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeactivateAccount not implemented")
 }
-func (UnimplementedUsersServiceServer) GetOneBySession(context.Context, *GetOneBySessionRequest) (*GetOneBySessionResponse, error) {
+func (UnimplementedUserServiceServer) GetOneBySession(context.Context, *GetOneBySessionRequest) (*GetOneBySessionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOneBySession not implemented")
 }
-func (UnimplementedUsersServiceServer) mustEmbedUnimplementedUsersServiceServer() {}
+func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 
-// UnsafeUsersServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UsersServiceServer will
+// UnsafeUserServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to UserServiceServer will
 // result in compilation errors.
-type UnsafeUsersServiceServer interface {
-	mustEmbedUnimplementedUsersServiceServer()
+type UnsafeUserServiceServer interface {
+	mustEmbedUnimplementedUserServiceServer()
 }
 
-func RegisterUsersServiceServer(s grpc.ServiceRegistrar, srv UsersServiceServer) {
-	s.RegisterService(&UsersService_ServiceDesc, srv)
+func RegisterUserServiceServer(s grpc.ServiceRegistrar, srv UserServiceServer) {
+	s.RegisterService(&UserService_ServiceDesc, srv)
 }
 
-func _UsersService_GetAllUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetAllUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAllUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UsersServiceServer).GetAllUser(ctx, in)
+		return srv.(UserServiceServer).GetAllUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fizenpay_be.UsersService/GetAllUser",
+		FullMethod: "/fizenpay_be.UserService/GetAllUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UsersServiceServer).GetAllUser(ctx, req.(*GetAllUserRequest))
+		return srv.(UserServiceServer).GetAllUser(ctx, req.(*GetAllUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UsersService_ActivateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_ActivateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ActivateAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UsersServiceServer).ActivateAccount(ctx, in)
+		return srv.(UserServiceServer).ActivateAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fizenpay_be.UsersService/ActivateAccount",
+		FullMethod: "/fizenpay_be.UserService/ActivateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UsersServiceServer).ActivateAccount(ctx, req.(*ActivateAccountRequest))
+		return srv.(UserServiceServer).ActivateAccount(ctx, req.(*ActivateAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UsersService_DeactivateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_DeactivateAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeactivateAccountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UsersServiceServer).DeactivateAccount(ctx, in)
+		return srv.(UserServiceServer).DeactivateAccount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fizenpay_be.UsersService/DeactivateAccount",
+		FullMethod: "/fizenpay_be.UserService/DeactivateAccount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UsersServiceServer).DeactivateAccount(ctx, req.(*DeactivateAccountRequest))
+		return srv.(UserServiceServer).DeactivateAccount(ctx, req.(*DeactivateAccountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UsersService_GetOneBySession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetOneBySession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetOneBySessionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UsersServiceServer).GetOneBySession(ctx, in)
+		return srv.(UserServiceServer).GetOneBySession(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/fizenpay_be.UsersService/GetOneBySession",
+		FullMethod: "/fizenpay_be.UserService/GetOneBySession",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UsersServiceServer).GetOneBySession(ctx, req.(*GetOneBySessionRequest))
+		return srv.(UserServiceServer).GetOneBySession(ctx, req.(*GetOneBySessionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// UsersService_ServiceDesc is the grpc.ServiceDesc for UsersService service.
+// UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var UsersService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "fizenpay_be.UsersService",
-	HandlerType: (*UsersServiceServer)(nil),
+var UserService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "fizenpay_be.UserService",
+	HandlerType: (*UserServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetAllUser",
-			Handler:    _UsersService_GetAllUser_Handler,
+			Handler:    _UserService_GetAllUser_Handler,
 		},
 		{
 			MethodName: "ActivateAccount",
-			Handler:    _UsersService_ActivateAccount_Handler,
+			Handler:    _UserService_ActivateAccount_Handler,
 		},
 		{
 			MethodName: "DeactivateAccount",
-			Handler:    _UsersService_DeactivateAccount_Handler,
+			Handler:    _UserService_DeactivateAccount_Handler,
 		},
 		{
 			MethodName: "GetOneBySession",
-			Handler:    _UsersService_GetOneBySession_Handler,
+			Handler:    _UserService_GetOneBySession_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
