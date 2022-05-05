@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package fizenpay_be;
 
-service SettingsService {
+service SettingService {
   rpc FindAllSupportedChain (Empty) returns (ListSupportedChain) {}
   rpc CreateSupportedChain (SupportedChain) returns (ListSupportedChain) {}
   rpc UpdateSupportedChain (UpdateSupportedChainRequest) returns (UpdateSupportedChainResponse) {}
