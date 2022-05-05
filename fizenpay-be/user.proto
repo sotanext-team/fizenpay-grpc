@@ -70,29 +70,29 @@ message Security {
 message User {
     string id = 1;
     int32 currentStep = 2;
-    bool isPendingApproved = 3;
-    string name = 4;
-    int32 autoWithdrawal = 5;
-    FlexiblePayment flexiblePaymentSettings = 6;
-    string email = 7;
-    string supportEmail = 8;
-    int32 userType = 9;
-    repeated Wallet wallets = 10;
-    repeated string backupCode = 11;
-    repeated CryptoCurrency cryptoCurrencySettings = 12;
-    int32 provider = 13;
-    string password = 14;
-    int32 status = 15;
-    string activeCode = 16;
-    string forgotPassword = 17;
-    Security security = 18;
-    string localCurrency = 19;
-    double fizenpayFeePerc = 20;
-    string sharedSecret = 21;
-    google.protobuf.Timestamp createdAt = 22;
-    google.protobuf.Timestamp requestCloseAccountAt = 23;
-    google.protobuf.Timestamp closedAccountAt = 24;
-    google.protobuf.Timestamp updateAt = 25;
+    string name = 3;
+    int32 autoWithdrawal = 4;
+    FlexiblePayment flexiblePaymentSettings = 5;
+    string email = 6;
+    string supportEmail = 7;
+    int32 userType = 8;
+    repeated Wallet wallets = 9;
+    repeated string backupCode = 10;
+    repeated CryptoCurrency cryptoCurrencySettings = 11;
+    int32 provider = 12;
+    string password = 13;
+    int32 status = 14;
+    string activeCode = 15;
+    string forgotPassword = 16;
+    Security security = 17;
+    string localCurrency = 18;
+    double fizenpayFeePerc = 19;
+    string sharedSecret = 20;
+    google.protobuf.Timestamp createdAt = 21;
+    google.protobuf.Timestamp requestCloseAccountAt = 22;
+    google.protobuf.Timestamp closedAccountAt = 23;
+    google.protobuf.Timestamp updateAt = 24;
+	string approvedStatus = 25;
 }
 
 message GetAllUserResponse {

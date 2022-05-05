@@ -63,7 +63,6 @@ export namespace fizenpay_be {
     export interface User {
         id?: string;
         currentStep?: number;
-        isPendingApproved?: boolean;
         name?: string;
         autoWithdrawal?: number;
         flexiblePaymentSettings?: fizenpay_be.FlexiblePayment;
@@ -86,6 +85,7 @@ export namespace fizenpay_be {
         requestCloseAccountAt?: google.protobuf.Timestamp;
         closedAccountAt?: google.protobuf.Timestamp;
         updateAt?: google.protobuf.Timestamp;
+        approvedStatus?: string;
     }
     export interface GetAllUserResponse {
         items?: fizenpay_be.User[];
