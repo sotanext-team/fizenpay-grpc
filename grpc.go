@@ -9,12 +9,6 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-const (
-	authPermissionClientKey = "authPermissionClientKey"
-	authSessionClientKey    = "authSessionClientKey"
-	componentClientKey      = "componentClientKey"
-)
-
 // GetConnection return GRPC Connection of input url
 // It will create connection if it is closed and return connection if connected
 func GetConnection(hostURL string, timeout time.Duration) (*grpc.ClientConn, error) {
