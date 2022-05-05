@@ -1,4 +1,4 @@
-package erpc
+package grpc
 
 import (
 	"context"
