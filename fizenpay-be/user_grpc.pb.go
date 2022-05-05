@@ -26,6 +26,7 @@ type UserServiceClient interface {
 	ActivateAccount(ctx context.Context, in *ActivateAccountRequest, opts ...grpc.CallOption) (*ActivateAccountResponse, error)
 	DeactivateAccount(ctx context.Context, in *DeactivateAccountRequest, opts ...grpc.CallOption) (*DeactivateAccountResponse, error)
 	GetOneBySession(ctx context.Context, in *GetOneBySessionRequest, opts ...grpc.CallOption) (*GetOneBySessionResponse, error)
+	GetOneByApiKey(ctx context.Context, in *GetOneByApiKeyRequest, opts ...grpc.CallOption) (*GetOneByApiKeyResponse, error)
 }
 
 type userServiceClient struct {
@@ -72,6 +73,15 @@ func (c *userServiceClient) GetOneBySession(ctx context.Context, in *GetOneBySes
 	return out, nil
 }
 
+func (c *userServiceClient) GetOneByApiKey(ctx context.Context, in *GetOneByApiKeyRequest, opts ...grpc.CallOption) (*GetOneByApiKeyResponse, error) {
+	out := new(GetOneByApiKeyResponse)
+	err := c.cc.Invoke(ctx, "/fizenpay_be.UserService/GetOneByApiKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility
@@ -80,6 +90,7 @@ type UserServiceServer interface {
 	ActivateAccount(context.Context, *ActivateAccountRequest) (*ActivateAccountResponse, error)
 	DeactivateAccount(context.Context, *DeactivateAccountRequest) (*DeactivateAccountResponse, error)
 	GetOneBySession(context.Context, *GetOneBySessionRequest) (*GetOneBySessionResponse, error)
+	GetOneByApiKey(context.Context, *GetOneByApiKeyRequest) (*GetOneByApiKeyResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -98,6 +109,9 @@ func (UnimplementedUserServiceServer) DeactivateAccount(context.Context, *Deacti
 }
 func (UnimplementedUserServiceServer) GetOneBySession(context.Context, *GetOneBySessionRequest) (*GetOneBySessionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOneBySession not implemented")
+}
+func (UnimplementedUserServiceServer) GetOneByApiKey(context.Context, *GetOneByApiKeyRequest) (*GetOneByApiKeyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOneByApiKey not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 
@@ -184,6 +198,24 @@ func _UserService_GetOneBySession_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_GetOneByApiKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOneByApiKeyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).GetOneByApiKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/fizenpay_be.UserService/GetOneByApiKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).GetOneByApiKey(ctx, req.(*GetOneByApiKeyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -206,6 +238,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOneBySession",
 			Handler:    _UserService_GetOneBySession_Handler,
+		},
+		{
+			MethodName: "GetOneByApiKey",
+			Handler:    _UserService_GetOneByApiKey_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
