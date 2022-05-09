@@ -5,7 +5,7 @@ package fizenpay_accounts;
 import "google/protobuf/timestamp.proto";
 
 
-service UserService {
+service MerchantService {
   rpc GetOne (GetOneRequest) returns (GetOneResponse) {}
 }
 

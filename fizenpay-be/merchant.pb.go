@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.28.0
 // 	protoc        v3.19.4
-// source: fizenpay-be/user.proto
+// source: fizenpay-be/merchant.proto
 
 package fizenpay_be
 
@@ -32,7 +32,7 @@ type GetOneBySessionRequest struct {
 func (x *GetOneBySessionRequest) Reset() {
 	*x = GetOneBySessionRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[0]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -45,7 +45,7 @@ func (x *GetOneBySessionRequest) String() string {
 func (*GetOneBySessionRequest) ProtoMessage() {}
 
 func (x *GetOneBySessionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[0]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +58,7 @@ func (x *GetOneBySessionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOneBySessionRequest.ProtoReflect.Descriptor instead.
 func (*GetOneBySessionRequest) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{0}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GetOneBySessionRequest) GetSession() string {
@@ -73,13 +73,13 @@ type GetOneBySessionResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	User *User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
+	Merchant *Merchant `protobuf:"bytes,1,opt,name=merchant,proto3" json:"merchant,omitempty"`
 }
 
 func (x *GetOneBySessionResponse) Reset() {
 	*x = GetOneBySessionResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[1]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -92,7 +92,7 @@ func (x *GetOneBySessionResponse) String() string {
 func (*GetOneBySessionResponse) ProtoMessage() {}
 
 func (x *GetOneBySessionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[1]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -105,12 +105,12 @@ func (x *GetOneBySessionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOneBySessionResponse.ProtoReflect.Descriptor instead.
 func (*GetOneBySessionResponse) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{1}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *GetOneBySessionResponse) GetUser() *User {
+func (x *GetOneBySessionResponse) GetMerchant() *Merchant {
 	if x != nil {
-		return x.User
+		return x.Merchant
 	}
 	return nil
 }
@@ -126,7 +126,7 @@ type GetOneByApiKeyRequest struct {
 func (x *GetOneByApiKeyRequest) Reset() {
 	*x = GetOneByApiKeyRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[2]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -139,7 +139,7 @@ func (x *GetOneByApiKeyRequest) String() string {
 func (*GetOneByApiKeyRequest) ProtoMessage() {}
 
 func (x *GetOneByApiKeyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[2]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -152,7 +152,7 @@ func (x *GetOneByApiKeyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOneByApiKeyRequest.ProtoReflect.Descriptor instead.
 func (*GetOneByApiKeyRequest) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{2}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetOneByApiKeyRequest) GetApiKey() string {
@@ -167,13 +167,13 @@ type GetOneByApiKeyResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	User *User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
+	Merchant *Merchant `protobuf:"bytes,1,opt,name=merchant,proto3" json:"merchant,omitempty"`
 }
 
 func (x *GetOneByApiKeyResponse) Reset() {
 	*x = GetOneByApiKeyResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[3]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -186,7 +186,7 @@ func (x *GetOneByApiKeyResponse) String() string {
 func (*GetOneByApiKeyResponse) ProtoMessage() {}
 
 func (x *GetOneByApiKeyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[3]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -199,12 +199,12 @@ func (x *GetOneByApiKeyResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetOneByApiKeyResponse.ProtoReflect.Descriptor instead.
 func (*GetOneByApiKeyResponse) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{3}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *GetOneByApiKeyResponse) GetUser() *User {
+func (x *GetOneByApiKeyResponse) GetMerchant() *Merchant {
 	if x != nil {
-		return x.User
+		return x.Merchant
 	}
 	return nil
 }
@@ -224,7 +224,7 @@ type FlexiblePayment struct {
 func (x *FlexiblePayment) Reset() {
 	*x = FlexiblePayment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[4]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -237,7 +237,7 @@ func (x *FlexiblePayment) String() string {
 func (*FlexiblePayment) ProtoMessage() {}
 
 func (x *FlexiblePayment) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[4]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -250,7 +250,7 @@ func (x *FlexiblePayment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FlexiblePayment.ProtoReflect.Descriptor instead.
 func (*FlexiblePayment) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{4}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *FlexiblePayment) GetType() int32 {
@@ -308,7 +308,7 @@ type Wallet struct {
 func (x *Wallet) Reset() {
 	*x = Wallet{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[5]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -321,7 +321,7 @@ func (x *Wallet) String() string {
 func (*Wallet) ProtoMessage() {}
 
 func (x *Wallet) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[5]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -334,7 +334,7 @@ func (x *Wallet) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Wallet.ProtoReflect.Descriptor instead.
 func (*Wallet) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{5}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Wallet) GetBip44Path() string {
@@ -430,7 +430,7 @@ type CryptoCurrency struct {
 func (x *CryptoCurrency) Reset() {
 	*x = CryptoCurrency{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[6]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -443,7 +443,7 @@ func (x *CryptoCurrency) String() string {
 func (*CryptoCurrency) ProtoMessage() {}
 
 func (x *CryptoCurrency) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[6]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -456,7 +456,7 @@ func (x *CryptoCurrency) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CryptoCurrency.ProtoReflect.Descriptor instead.
 func (*CryptoCurrency) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{6}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *CryptoCurrency) GetName() string {
@@ -566,7 +566,7 @@ type Security struct {
 func (x *Security) Reset() {
 	*x = Security{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[7]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -579,7 +579,7 @@ func (x *Security) String() string {
 func (*Security) ProtoMessage() {}
 
 func (x *Security) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[7]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -592,7 +592,7 @@ func (x *Security) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Security.ProtoReflect.Descriptor instead.
 func (*Security) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{7}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *Security) GetIs2FaEnabled() bool {
@@ -637,7 +637,7 @@ func (x *Security) GetEmailCodeExp() int32 {
 	return 0
 }
 
-type User struct {
+type Merchant struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -649,7 +649,7 @@ type User struct {
 	FlexiblePaymentSettings *FlexiblePayment       `protobuf:"bytes,5,opt,name=flexiblePaymentSettings,proto3" json:"flexiblePaymentSettings,omitempty"`
 	Email                   string                 `protobuf:"bytes,6,opt,name=email,proto3" json:"email,omitempty"`
 	SupportEmail            string                 `protobuf:"bytes,7,opt,name=supportEmail,proto3" json:"supportEmail,omitempty"`
-	UserType                int32                  `protobuf:"varint,8,opt,name=userType,proto3" json:"userType,omitempty"`
+	MerchantType                int32                  `protobuf:"varint,8,opt,name=merchantType,proto3" json:"merchantType,omitempty"`
 	Wallets                 []*Wallet              `protobuf:"bytes,9,rep,name=wallets,proto3" json:"wallets,omitempty"`
 	BackupCode              []string               `protobuf:"bytes,10,rep,name=backupCode,proto3" json:"backupCode,omitempty"`
 	CryptoCurrencySettings  []*CryptoCurrency      `protobuf:"bytes,11,rep,name=cryptoCurrencySettings,proto3" json:"cryptoCurrencySettings,omitempty"`
@@ -669,23 +669,23 @@ type User struct {
 	ApprovedStatus          string                 `protobuf:"bytes,25,opt,name=approvedStatus,proto3" json:"approvedStatus,omitempty"`
 }
 
-func (x *User) Reset() {
-	*x = User{}
+func (x *Merchant) Reset() {
+	*x = Merchant{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[8]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *User) String() string {
+func (x *Merchant) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*User) ProtoMessage() {}
+func (*Merchant) ProtoMessage() {}
 
-func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[8]
+func (x *Merchant) ProtoReflect() protoreflect.Message {
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -696,212 +696,212 @@ func (x *User) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use User.ProtoReflect.Descriptor instead.
-func (*User) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{8}
+// Deprecated: Use Merchant.ProtoReflect.Descriptor instead.
+func (*Merchant) Descriptor() ([]byte, []int) {
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *User) GetId() string {
+func (x *Merchant) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *User) GetCurrentStep() int32 {
+func (x *Merchant) GetCurrentStep() int32 {
 	if x != nil {
 		return x.CurrentStep
 	}
 	return 0
 }
 
-func (x *User) GetName() string {
+func (x *Merchant) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *User) GetAutoWithdrawal() int32 {
+func (x *Merchant) GetAutoWithdrawal() int32 {
 	if x != nil {
 		return x.AutoWithdrawal
 	}
 	return 0
 }
 
-func (x *User) GetFlexiblePaymentSettings() *FlexiblePayment {
+func (x *Merchant) GetFlexiblePaymentSettings() *FlexiblePayment {
 	if x != nil {
 		return x.FlexiblePaymentSettings
 	}
 	return nil
 }
 
-func (x *User) GetEmail() string {
+func (x *Merchant) GetEmail() string {
 	if x != nil {
 		return x.Email
 	}
 	return ""
 }
 
-func (x *User) GetSupportEmail() string {
+func (x *Merchant) GetSupportEmail() string {
 	if x != nil {
 		return x.SupportEmail
 	}
 	return ""
 }
 
-func (x *User) GetUserType() int32 {
+func (x *Merchant) GetMerchantType() int32 {
 	if x != nil {
-		return x.UserType
+		return x.MerchantType
 	}
 	return 0
 }
 
-func (x *User) GetWallets() []*Wallet {
+func (x *Merchant) GetWallets() []*Wallet {
 	if x != nil {
 		return x.Wallets
 	}
 	return nil
 }
 
-func (x *User) GetBackupCode() []string {
+func (x *Merchant) GetBackupCode() []string {
 	if x != nil {
 		return x.BackupCode
 	}
 	return nil
 }
 
-func (x *User) GetCryptoCurrencySettings() []*CryptoCurrency {
+func (x *Merchant) GetCryptoCurrencySettings() []*CryptoCurrency {
 	if x != nil {
 		return x.CryptoCurrencySettings
 	}
 	return nil
 }
 
-func (x *User) GetProvider() int32 {
+func (x *Merchant) GetProvider() int32 {
 	if x != nil {
 		return x.Provider
 	}
 	return 0
 }
 
-func (x *User) GetPassword() string {
+func (x *Merchant) GetPassword() string {
 	if x != nil {
 		return x.Password
 	}
 	return ""
 }
 
-func (x *User) GetStatus() int32 {
+func (x *Merchant) GetStatus() int32 {
 	if x != nil {
 		return x.Status
 	}
 	return 0
 }
 
-func (x *User) GetActiveCode() string {
+func (x *Merchant) GetActiveCode() string {
 	if x != nil {
 		return x.ActiveCode
 	}
 	return ""
 }
 
-func (x *User) GetForgotPassword() string {
+func (x *Merchant) GetForgotPassword() string {
 	if x != nil {
 		return x.ForgotPassword
 	}
 	return ""
 }
 
-func (x *User) GetSecurity() *Security {
+func (x *Merchant) GetSecurity() *Security {
 	if x != nil {
 		return x.Security
 	}
 	return nil
 }
 
-func (x *User) GetLocalCurrency() string {
+func (x *Merchant) GetLocalCurrency() string {
 	if x != nil {
 		return x.LocalCurrency
 	}
 	return ""
 }
 
-func (x *User) GetFizenpayFeePerc() float64 {
+func (x *Merchant) GetFizenpayFeePerc() float64 {
 	if x != nil {
 		return x.FizenpayFeePerc
 	}
 	return 0
 }
 
-func (x *User) GetSharedSecret() string {
+func (x *Merchant) GetSharedSecret() string {
 	if x != nil {
 		return x.SharedSecret
 	}
 	return ""
 }
 
-func (x *User) GetCreatedAt() *timestamppb.Timestamp {
+func (x *Merchant) GetCreatedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.CreatedAt
 	}
 	return nil
 }
 
-func (x *User) GetRequestCloseAccountAt() *timestamppb.Timestamp {
+func (x *Merchant) GetRequestCloseAccountAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.RequestCloseAccountAt
 	}
 	return nil
 }
 
-func (x *User) GetClosedAccountAt() *timestamppb.Timestamp {
+func (x *Merchant) GetClosedAccountAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.ClosedAccountAt
 	}
 	return nil
 }
 
-func (x *User) GetUpdateAt() *timestamppb.Timestamp {
+func (x *Merchant) GetUpdateAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.UpdateAt
 	}
 	return nil
 }
 
-func (x *User) GetApprovedStatus() string {
+func (x *Merchant) GetApprovedStatus() string {
 	if x != nil {
 		return x.ApprovedStatus
 	}
 	return ""
 }
 
-type GetAllUserResponse struct {
+type GetAllMerchantResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Items []*User `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items []*Merchant `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	Total int32   `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
 }
 
-func (x *GetAllUserResponse) Reset() {
-	*x = GetAllUserResponse{}
+func (x *GetAllMerchantResponse) Reset() {
+	*x = GetAllMerchantResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[9]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *GetAllUserResponse) String() string {
+func (x *GetAllMerchantResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetAllUserResponse) ProtoMessage() {}
+func (*GetAllMerchantResponse) ProtoMessage() {}
 
-func (x *GetAllUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[9]
+func (x *GetAllMerchantResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -912,26 +912,26 @@ func (x *GetAllUserResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetAllUserResponse.ProtoReflect.Descriptor instead.
-func (*GetAllUserResponse) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{9}
+// Deprecated: Use GetAllMerchantResponse.ProtoReflect.Descriptor instead.
+func (*GetAllMerchantResponse) Descriptor() ([]byte, []int) {
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *GetAllUserResponse) GetItems() []*User {
+func (x *GetAllMerchantResponse) GetItems() []*Merchant {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *GetAllUserResponse) GetTotal() int32 {
+func (x *GetAllMerchantResponse) GetTotal() int32 {
 	if x != nil {
 		return x.Total
 	}
 	return 0
 }
 
-type GetAllUserRequest struct {
+type GetAllMerchantRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -943,23 +943,23 @@ type GetAllUserRequest struct {
 	Page              int32  `protobuf:"varint,5,opt,name=page,proto3" json:"page,omitempty"`
 }
 
-func (x *GetAllUserRequest) Reset() {
-	*x = GetAllUserRequest{}
+func (x *GetAllMerchantRequest) Reset() {
+	*x = GetAllMerchantRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[10]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *GetAllUserRequest) String() string {
+func (x *GetAllMerchantRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetAllUserRequest) ProtoMessage() {}
+func (*GetAllMerchantRequest) ProtoMessage() {}
 
-func (x *GetAllUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[10]
+func (x *GetAllMerchantRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -970,40 +970,40 @@ func (x *GetAllUserRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetAllUserRequest.ProtoReflect.Descriptor instead.
-func (*GetAllUserRequest) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{10}
+// Deprecated: Use GetAllMerchantRequest.ProtoReflect.Descriptor instead.
+func (*GetAllMerchantRequest) Descriptor() ([]byte, []int) {
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *GetAllUserRequest) GetIsPendingApproved() string {
+func (x *GetAllMerchantRequest) GetIsPendingApproved() string {
 	if x != nil {
 		return x.IsPendingApproved
 	}
 	return ""
 }
 
-func (x *GetAllUserRequest) GetSearch() string {
+func (x *GetAllMerchantRequest) GetSearch() string {
 	if x != nil {
 		return x.Search
 	}
 	return ""
 }
 
-func (x *GetAllUserRequest) GetStatus() string {
+func (x *GetAllMerchantRequest) GetStatus() string {
 	if x != nil {
 		return x.Status
 	}
 	return ""
 }
 
-func (x *GetAllUserRequest) GetLimit() int32 {
+func (x *GetAllMerchantRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *GetAllUserRequest) GetPage() int32 {
+func (x *GetAllMerchantRequest) GetPage() int32 {
 	if x != nil {
 		return x.Page
 	}
@@ -1015,13 +1015,13 @@ type ActivateAccountRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId string `protobuf:"bytes,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	MerchantId string `protobuf:"bytes,1,opt,name=merchantId,proto3" json:"merchantId,omitempty"`
 }
 
 func (x *ActivateAccountRequest) Reset() {
 	*x = ActivateAccountRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[11]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1034,7 +1034,7 @@ func (x *ActivateAccountRequest) String() string {
 func (*ActivateAccountRequest) ProtoMessage() {}
 
 func (x *ActivateAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[11]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1047,12 +1047,12 @@ func (x *ActivateAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActivateAccountRequest.ProtoReflect.Descriptor instead.
 func (*ActivateAccountRequest) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{11}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *ActivateAccountRequest) GetUserId() string {
+func (x *ActivateAccountRequest) GetMerchantId() string {
 	if x != nil {
-		return x.UserId
+		return x.MerchantId
 	}
 	return ""
 }
@@ -1066,7 +1066,7 @@ type ActivateAccountResponse struct {
 func (x *ActivateAccountResponse) Reset() {
 	*x = ActivateAccountResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[12]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1079,7 +1079,7 @@ func (x *ActivateAccountResponse) String() string {
 func (*ActivateAccountResponse) ProtoMessage() {}
 
 func (x *ActivateAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[12]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1092,7 +1092,7 @@ func (x *ActivateAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActivateAccountResponse.ProtoReflect.Descriptor instead.
 func (*ActivateAccountResponse) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{12}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{12}
 }
 
 type DeactivateAccountRequest struct {
@@ -1100,13 +1100,13 @@ type DeactivateAccountRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId string `protobuf:"bytes,1,opt,name=userId,proto3" json:"userId,omitempty"`
+	MerchantId string `protobuf:"bytes,1,opt,name=merchantId,proto3" json:"merchantId,omitempty"`
 }
 
 func (x *DeactivateAccountRequest) Reset() {
 	*x = DeactivateAccountRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[13]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1119,7 +1119,7 @@ func (x *DeactivateAccountRequest) String() string {
 func (*DeactivateAccountRequest) ProtoMessage() {}
 
 func (x *DeactivateAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[13]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1132,12 +1132,12 @@ func (x *DeactivateAccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeactivateAccountRequest.ProtoReflect.Descriptor instead.
 func (*DeactivateAccountRequest) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{13}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *DeactivateAccountRequest) GetUserId() string {
+func (x *DeactivateAccountRequest) GetMerchantId() string {
 	if x != nil {
-		return x.UserId
+		return x.MerchantId
 	}
 	return ""
 }
@@ -1151,7 +1151,7 @@ type DeactivateAccountResponse struct {
 func (x *DeactivateAccountResponse) Reset() {
 	*x = DeactivateAccountResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_fizenpay_be_user_proto_msgTypes[14]
+		mi := &file_fizenpay_be_merchant_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1164,7 +1164,7 @@ func (x *DeactivateAccountResponse) String() string {
 func (*DeactivateAccountResponse) ProtoMessage() {}
 
 func (x *DeactivateAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_fizenpay_be_user_proto_msgTypes[14]
+	mi := &file_fizenpay_be_merchant_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1177,12 +1177,12 @@ func (x *DeactivateAccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeactivateAccountResponse.ProtoReflect.Descriptor instead.
 func (*DeactivateAccountResponse) Descriptor() ([]byte, []int) {
-	return file_fizenpay_be_user_proto_rawDescGZIP(), []int{14}
+	return file_fizenpay_be_merchant_proto_rawDescGZIP(), []int{14}
 }
 
-var File_fizenpay_be_user_proto protoreflect.FileDescriptor
+var File_fizenpay_be_merchant_proto protoreflect.FileDescriptor
 
-var file_fizenpay_be_user_proto_rawDesc = []byte{
+var file_fizenpay_be_merchant_proto_rawDesc = []byte{
 	0x0a, 0x16, 0x66, 0x69, 0x7a, 0x65, 0x6e, 0x70, 0x61, 0x79, 0x2d, 0x62, 0x65, 0x2f, 0x75, 0x73,
 	0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0b, 0x66, 0x69, 0x7a, 0x65, 0x6e, 0x70,
 	0x61, 0x79, 0x5f, 0x62, 0x65, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72,
@@ -1408,19 +1408,19 @@ var file_fizenpay_be_user_proto_rawDesc = []byte{
 }
 
 var (
-	file_fizenpay_be_user_proto_rawDescOnce sync.Once
-	file_fizenpay_be_user_proto_rawDescData = file_fizenpay_be_user_proto_rawDesc
+	file_fizenpay_be_merchant_proto_rawDescOnce sync.Once
+	file_fizenpay_be_merchant_proto_rawDescData = file_fizenpay_be_merchant_proto_rawDesc
 )
 
-func file_fizenpay_be_user_proto_rawDescGZIP() []byte {
-	file_fizenpay_be_user_proto_rawDescOnce.Do(func() {
-		file_fizenpay_be_user_proto_rawDescData = protoimpl.X.CompressGZIP(file_fizenpay_be_user_proto_rawDescData)
+func file_fizenpay_be_merchant_proto_rawDescGZIP() []byte {
+	file_fizenpay_be_merchant_proto_rawDescOnce.Do(func() {
+		file_fizenpay_be_merchant_proto_rawDescData = protoimpl.X.CompressGZIP(file_fizenpay_be_merchant_proto_rawDescData)
 	})
-	return file_fizenpay_be_user_proto_rawDescData
+	return file_fizenpay_be_merchant_proto_rawDescData
 }
 
-var file_fizenpay_be_user_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_fizenpay_be_user_proto_goTypes = []interface{}{
+var file_fizenpay_be_merchant_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_fizenpay_be_merchant_proto_goTypes = []interface{}{
 	(*GetOneBySessionRequest)(nil),    // 0: fizenpay_be.GetOneBySessionRequest
 	(*GetOneBySessionResponse)(nil),   // 1: fizenpay_be.GetOneBySessionResponse
 	(*GetOneByApiKeyRequest)(nil),     // 2: fizenpay_be.GetOneByApiKeyRequest
@@ -1429,37 +1429,37 @@ var file_fizenpay_be_user_proto_goTypes = []interface{}{
 	(*Wallet)(nil),                    // 5: fizenpay_be.Wallet
 	(*CryptoCurrency)(nil),            // 6: fizenpay_be.CryptoCurrency
 	(*Security)(nil),                  // 7: fizenpay_be.Security
-	(*User)(nil),                      // 8: fizenpay_be.User
-	(*GetAllUserResponse)(nil),        // 9: fizenpay_be.GetAllUserResponse
-	(*GetAllUserRequest)(nil),         // 10: fizenpay_be.GetAllUserRequest
+	(*Merchant)(nil),                      // 8: fizenpay_be.Merchant
+	(*GetAllMerchantResponse)(nil),        // 9: fizenpay_be.GetAllMerchantResponse
+	(*GetAllMerchantRequest)(nil),         // 10: fizenpay_be.GetAllMerchantRequest
 	(*ActivateAccountRequest)(nil),    // 11: fizenpay_be.ActivateAccountRequest
 	(*ActivateAccountResponse)(nil),   // 12: fizenpay_be.ActivateAccountResponse
 	(*DeactivateAccountRequest)(nil),  // 13: fizenpay_be.DeactivateAccountRequest
 	(*DeactivateAccountResponse)(nil), // 14: fizenpay_be.DeactivateAccountResponse
 	(*timestamppb.Timestamp)(nil),     // 15: google.protobuf.Timestamp
 }
-var file_fizenpay_be_user_proto_depIdxs = []int32{
-	8,  // 0: fizenpay_be.GetOneBySessionResponse.user:type_name -> fizenpay_be.User
-	8,  // 1: fizenpay_be.GetOneByApiKeyResponse.user:type_name -> fizenpay_be.User
-	4,  // 2: fizenpay_be.User.flexiblePaymentSettings:type_name -> fizenpay_be.FlexiblePayment
-	5,  // 3: fizenpay_be.User.wallets:type_name -> fizenpay_be.Wallet
-	6,  // 4: fizenpay_be.User.cryptoCurrencySettings:type_name -> fizenpay_be.CryptoCurrency
-	7,  // 5: fizenpay_be.User.security:type_name -> fizenpay_be.Security
-	15, // 6: fizenpay_be.User.createdAt:type_name -> google.protobuf.Timestamp
-	15, // 7: fizenpay_be.User.requestCloseAccountAt:type_name -> google.protobuf.Timestamp
-	15, // 8: fizenpay_be.User.closedAccountAt:type_name -> google.protobuf.Timestamp
-	15, // 9: fizenpay_be.User.updateAt:type_name -> google.protobuf.Timestamp
-	8,  // 10: fizenpay_be.GetAllUserResponse.items:type_name -> fizenpay_be.User
-	10, // 11: fizenpay_be.UserService.GetAllUser:input_type -> fizenpay_be.GetAllUserRequest
-	11, // 12: fizenpay_be.UserService.ActivateAccount:input_type -> fizenpay_be.ActivateAccountRequest
-	13, // 13: fizenpay_be.UserService.DeactivateAccount:input_type -> fizenpay_be.DeactivateAccountRequest
-	0,  // 14: fizenpay_be.UserService.GetOneBySession:input_type -> fizenpay_be.GetOneBySessionRequest
-	2,  // 15: fizenpay_be.UserService.GetOneByApiKey:input_type -> fizenpay_be.GetOneByApiKeyRequest
-	9,  // 16: fizenpay_be.UserService.GetAllUser:output_type -> fizenpay_be.GetAllUserResponse
-	12, // 17: fizenpay_be.UserService.ActivateAccount:output_type -> fizenpay_be.ActivateAccountResponse
-	14, // 18: fizenpay_be.UserService.DeactivateAccount:output_type -> fizenpay_be.DeactivateAccountResponse
-	1,  // 19: fizenpay_be.UserService.GetOneBySession:output_type -> fizenpay_be.GetOneBySessionResponse
-	3,  // 20: fizenpay_be.UserService.GetOneByApiKey:output_type -> fizenpay_be.GetOneByApiKeyResponse
+var file_fizenpay_be_merchant_proto_depIdxs = []int32{
+	8,  // 0: fizenpay_be.GetOneBySessionResponse.merchant:type_name -> fizenpay_be.Merchant
+	8,  // 1: fizenpay_be.GetOneByApiKeyResponse.merchant:type_name -> fizenpay_be.Merchant
+	4,  // 2: fizenpay_be.Merchant.flexiblePaymentSettings:type_name -> fizenpay_be.FlexiblePayment
+	5,  // 3: fizenpay_be.Merchant.wallets:type_name -> fizenpay_be.Wallet
+	6,  // 4: fizenpay_be.Merchant.cryptoCurrencySettings:type_name -> fizenpay_be.CryptoCurrency
+	7,  // 5: fizenpay_be.Merchant.security:type_name -> fizenpay_be.Security
+	15, // 6: fizenpay_be.Merchant.createdAt:type_name -> google.protobuf.Timestamp
+	15, // 7: fizenpay_be.Merchant.requestCloseAccountAt:type_name -> google.protobuf.Timestamp
+	15, // 8: fizenpay_be.Merchant.closedAccountAt:type_name -> google.protobuf.Timestamp
+	15, // 9: fizenpay_be.Merchant.updateAt:type_name -> google.protobuf.Timestamp
+	8,  // 10: fizenpay_be.GetAllMerchantResponse.items:type_name -> fizenpay_be.Merchant
+	10, // 11: fizenpay_be.MerchantService.GetAllMerchant:input_type -> fizenpay_be.GetAllMerchantRequest
+	11, // 12: fizenpay_be.MerchantService.ActivateAccount:input_type -> fizenpay_be.ActivateAccountRequest
+	13, // 13: fizenpay_be.MerchantService.DeactivateAccount:input_type -> fizenpay_be.DeactivateAccountRequest
+	0,  // 14: fizenpay_be.MerchantService.GetOneBySession:input_type -> fizenpay_be.GetOneBySessionRequest
+	2,  // 15: fizenpay_be.MerchantService.GetOneByApiKey:input_type -> fizenpay_be.GetOneByApiKeyRequest
+	9,  // 16: fizenpay_be.MerchantService.GetAllMerchant:output_type -> fizenpay_be.GetAllMerchantResponse
+	12, // 17: fizenpay_be.MerchantService.ActivateAccount:output_type -> fizenpay_be.ActivateAccountResponse
+	14, // 18: fizenpay_be.MerchantService.DeactivateAccount:output_type -> fizenpay_be.DeactivateAccountResponse
+	1,  // 19: fizenpay_be.MerchantService.GetOneBySession:output_type -> fizenpay_be.GetOneBySessionResponse
+	3,  // 20: fizenpay_be.MerchantService.GetOneByApiKey:output_type -> fizenpay_be.GetOneByApiKeyResponse
 	16, // [16:21] is the sub-list for method output_type
 	11, // [11:16] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name
@@ -1467,13 +1467,13 @@ var file_fizenpay_be_user_proto_depIdxs = []int32{
 	0,  // [0:11] is the sub-list for field type_name
 }
 
-func init() { file_fizenpay_be_user_proto_init() }
-func file_fizenpay_be_user_proto_init() {
-	if File_fizenpay_be_user_proto != nil {
+func init() { file_fizenpay_be_merchant_proto_init() }
+func file_fizenpay_be_merchant_proto_init() {
+	if File_fizenpay_be_merchant_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_fizenpay_be_user_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetOneBySessionRequest); i {
 			case 0:
 				return &v.state
@@ -1485,7 +1485,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetOneBySessionResponse); i {
 			case 0:
 				return &v.state
@@ -1497,7 +1497,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetOneByApiKeyRequest); i {
 			case 0:
 				return &v.state
@@ -1509,7 +1509,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetOneByApiKeyResponse); i {
 			case 0:
 				return &v.state
@@ -1521,7 +1521,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FlexiblePayment); i {
 			case 0:
 				return &v.state
@@ -1533,7 +1533,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Wallet); i {
 			case 0:
 				return &v.state
@@ -1545,7 +1545,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CryptoCurrency); i {
 			case 0:
 				return &v.state
@@ -1557,7 +1557,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Security); i {
 			case 0:
 				return &v.state
@@ -1569,8 +1569,8 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*User); i {
+		file_fizenpay_be_merchant_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Merchant); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1581,8 +1581,8 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAllUserResponse); i {
+		file_fizenpay_be_merchant_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAllMerchantResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1593,8 +1593,8 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetAllUserRequest); i {
+		file_fizenpay_be_merchant_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAllMerchantRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1605,7 +1605,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ActivateAccountRequest); i {
 			case 0:
 				return &v.state
@@ -1617,7 +1617,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ActivateAccountResponse); i {
 			case 0:
 				return &v.state
@@ -1629,7 +1629,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeactivateAccountRequest); i {
 			case 0:
 				return &v.state
@@ -1641,7 +1641,7 @@ func file_fizenpay_be_user_proto_init() {
 				return nil
 			}
 		}
-		file_fizenpay_be_user_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_fizenpay_be_merchant_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeactivateAccountResponse); i {
 			case 0:
 				return &v.state
@@ -1658,18 +1658,18 @@ func file_fizenpay_be_user_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_fizenpay_be_user_proto_rawDesc,
+			RawDescriptor: file_fizenpay_be_merchant_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_fizenpay_be_user_proto_goTypes,
-		DependencyIndexes: file_fizenpay_be_user_proto_depIdxs,
-		MessageInfos:      file_fizenpay_be_user_proto_msgTypes,
+		GoTypes:           file_fizenpay_be_merchant_proto_goTypes,
+		DependencyIndexes: file_fizenpay_be_merchant_proto_depIdxs,
+		MessageInfos:      file_fizenpay_be_merchant_proto_msgTypes,
 	}.Build()
-	File_fizenpay_be_user_proto = out.File
-	file_fizenpay_be_user_proto_rawDesc = nil
-	file_fizenpay_be_user_proto_goTypes = nil
-	file_fizenpay_be_user_proto_depIdxs = nil
+	File_fizenpay_be_merchant_proto = out.File
+	file_fizenpay_be_merchant_proto_rawDesc = nil
+	file_fizenpay_be_merchant_proto_goTypes = nil
+	file_fizenpay_be_merchant_proto_depIdxs = nil
 }

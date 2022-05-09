@@ -17,7 +17,7 @@ service WebhookService {
 }
 
 message FindAllRequest {
-  string userId = 1;
+  string merchantId = 1;
 }
 
 message FindAllResponse {
@@ -30,28 +30,28 @@ message UrlsResponse {
 }
 
 message SubscribeWebhookRequest {
-  string userId = 1;
+  string merchantId = 1;
   string webhookId = 2;
   string url = 3;
 }
 
 message SubscribeWebhookResponse {
-  string userId = 1;
+  string merchantId = 1;
   WebhookResponse webhook = 2;
 }
 
 message SubscribeWebhooksRequest {
-  string userId = 1;
+  string merchantId = 1;
   string url = 2;
 }
 
 message SubscribeWebhooksResponse {
-  string userId = 1;
+  string merchantId = 1;
   repeated WebhookResponse webhooks = 2;
 }
 
 message UnsubscribeWebhookRequest {
-  string userId = 1;
+  string merchantId = 1;
   string webhookId = 2;
   string url = 3;
 }
@@ -72,7 +72,7 @@ message UnsubscribeWebhookResponse {
 }
 
 message UpdateEndpointRequest {
-  string userId = 1;
+  string merchantId = 1;
   repeated WebhookUpdateEndpointRequest webhooks = 2;
   string url = 3;
 }
@@ -88,7 +88,7 @@ message WebhookUpdateEndpointRequest {
 
 message SendTestRequest {
   string topic = 1;
-  string userId = 2;
+  string merchantId = 2;
   string url = 3;
   string sharedSecret = 4;
 }
@@ -99,7 +99,7 @@ message SendTestResponse {
 }
 
 message UnsubscribeWebhooksRequest {
-  string userId = 1;
+  string merchantId = 1;
   string url = 2;
 }
 
