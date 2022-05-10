@@ -13,7 +13,7 @@
 
 Build example:
 
-`protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative fizenpay-be/user.proto`
+`protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative fizenpay-be/merchant.proto`
 
 This command will output pb files that need to be committed as well. Everytime a proto file is updated, this command
 must be executed to rebuild corresponding pb files.

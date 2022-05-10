@@ -20,7 +20,7 @@ message ChargeResponse {
     string pricingType = 4;
     string redirectUrl = 5;
     string cancelUrl = 6;
-    string userId = 7;
+    string merchantId = 7;
     string status = 8;
     string code = 9;
 }

@@ -5,26 +5,21 @@
 import { Observable } from 'rxjs';
 import { Metadata } from '@grpc/grpc-js';
 
-export namespace fizenpay_be {
-	export interface ChargeService {
+export namespace fizenpay_accounts {
+	export interface MerchantService {
 		getOne(
 			data: GetOneRequest,
 			metadata?: Metadata,
-		): Observable<ChargeResponse>;
+		): Observable<GetOneResponse>;
 	}
 	export interface GetOneRequest {
-		code?: string;
+		email?: string;
 	}
-	export interface ChargeResponse {
+	export interface GetOneResponse {
 		id?: string;
-		name?: string;
-		description?: string;
-		pricingType?: string;
-		redirectUrl?: string;
-		cancelUrl?: string;
-		merchantId?: string;
-		status?: string;
-		code?: string;
+		email?: string;
+		firstName?: string;
+		lastName?: string;
 	}
 }
 export namespace google {

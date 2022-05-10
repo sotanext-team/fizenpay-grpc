@@ -6,8 +6,8 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/sotanext-team/fizenpay-grpc/fizenpay-be;fizenpay_be";
 
-service UserService {
-  rpc GetAllUser (GetAllUserRequest) returns (GetAllUserResponse) {}
+service MerchantService {
+  rpc GetAllMerchant (GetAllMerchantRequest) returns (GetAllMerchantResponse) {}
   rpc ActivateAccount (ActivateAccountRequest) returns (ActivateAccountResponse) {}
   rpc DeactivateAccount (DeactivateAccountRequest) returns (DeactivateAccountResponse) {}
   rpc GetOneBySession (GetOneBySessionRequest) returns (GetOneBySessionResponse) {}
@@ -19,7 +19,7 @@ message GetOneBySessionRequest {
 }
 
 message GetOneBySessionResponse {
-    User user = 1;
+    Merchant merchant = 1;
 }
 
 message GetOneByApiKeyRequest {
@@ -27,7 +27,7 @@ message GetOneByApiKeyRequest {
 }
 
 message GetOneByApiKeyResponse {
-    User user = 1;
+    Merchant merchant = 1;
 }
 
 message FlexiblePayment {
@@ -76,7 +76,7 @@ message Security {
     int32 emailCodeExp = 6;
 }
 
-message User {
+message Merchant {
     string id = 1;
     int32 currentStep = 2;
     string name = 3;
@@ -84,7 +84,7 @@ message User {
     FlexiblePayment flexiblePaymentSettings = 5;
     string email = 6;
     string supportEmail = 7;
-    int32 userType = 8;
+    int32 merchantType = 8;
     repeated Wallet wallets = 9;
     repeated string backupCode = 10;
     repeated CryptoCurrency cryptoCurrencySettings = 11;
@@ -104,12 +104,12 @@ message User {
 	string approvedStatus = 25;
 }
 
-message GetAllUserResponse {
-    repeated User items = 1;
+message GetAllMerchantResponse {
+    repeated Merchant items = 1;
     int32 total = 2;
 }
 
-message GetAllUserRequest {
+message GetAllMerchantRequest {
     string isPendingApproved = 1;
     string search = 2;
     string status = 3;
@@ -118,13 +118,13 @@ message GetAllUserRequest {
 }
 
 message ActivateAccountRequest {
-    string userId = 1;
+    string merchantId = 1;
 }
 
 message ActivateAccountResponse {}
 
 message DeactivateAccountRequest {
-    string userId = 1;
+    string merchantId = 1;
 }
 
 message DeactivateAccountResponse {}
