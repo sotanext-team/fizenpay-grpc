@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package fizenpay_auth;
+
+option go_package = "github.com/sotanext-team/fizenpay-grpc/fizenpay-auth;fizenpay_auth";
+
+service RoleService {
+  rpc CheckPermission (CheckPermissionRequest) returns (CheckPermissionResponse) {}
+}
+
+message CheckPermissionRequest {
+    string email = 1;
+	string path = 2;
+	string domain = 3;
+	string method = 4;
+}
+
+message CheckPermissionResponse {
+	bool hasPermission = 1;
+}
