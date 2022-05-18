@@ -6,6 +6,7 @@ option go_package = "github.com/sotanext-team/fizenpay-grpc/fizenpay-auth;fizenp
 
 service RoleService {
   rpc CheckPermission (CheckPermissionRequest) returns (CheckPermissionResponse) {}
+  rpc ReloadPolicy (ReloadPolicyRequest) returns (ReloadPolicyResponse) {}
 }
 
 message CheckPermissionRequest {
@@ -17,4 +18,10 @@ message CheckPermissionRequest {
 
 message CheckPermissionResponse {
 	bool hasPermission = 1;
+}
+
+message ReloadPolicyRequest {
+}
+
+message ReloadPolicyResponse {
 }
