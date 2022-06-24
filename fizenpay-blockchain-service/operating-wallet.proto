@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package blockchain_service;
+
+service OperatingWalletService {
+  rpc FindAll (FindAllOWRequest) returns (FindAllOWResponse) {};
+}
+
+message FindAllOWRequest {
+}
+
+message FindAllOWResponse {
+  repeated OperatingWallet operatingWallets = 1;
+}
+
+message OperatingWallet {
+  string id = 1;
+  string name =2 ;
+  int32 index = 3;
+  string activeStatus = 4;
+  string commandStatus = 5;
+  string createdAt = 6;
+  string updatedAt = 7;
+}
