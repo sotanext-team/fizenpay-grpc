@@ -4,6 +4,7 @@ package blockchain_service;
 
 service OperatingWalletService {
   rpc FindAll (FindAllOWRequest) returns (FindAllOWResponse) {};
+  rpc BatchImport (BatchImportRequest) returns (BatchImportResponse) {}
 }
 
 message FindAllOWRequest {
@@ -21,4 +22,17 @@ message OperatingWallet {
   string commandStatus = 5;
   string createdAt = 6;
   string updatedAt = 7;
+}
+
+message BatchImportRequest {
+	repeated Wallet wallets = 1;
+}
+
+message BatchImportResponse {
+
+}
+
+message Wallet {
+	string address = 1;
+	string privateKey = 2;
 }
