@@ -6,6 +6,7 @@ service OperatingWalletService {
   rpc FindAll (FindAllOWRequest) returns (FindAllOWResponse) {};
   rpc GetNetworkSettings (Empty) returns (GetNetworkSettingsResponse) {};
   rpc UpdateNetworkSettings (UpdateNetworkSettingsRequest) returns (Empty) {};
+  rpc BatchImport (BatchImportRequest) returns (BatchImportResponse) {}
 }
 
 message Empty {}
@@ -43,4 +44,16 @@ message UpdateNetworkSettingsRequest {
   string network = 1;
   string autoTopupThreshold = 2;
   string autoTopupAmount = 3;
+}
+message BatchImportRequest {
+	repeated Wallet wallets = 1;
+}
+
+message BatchImportResponse {
+
+}
+
+message Wallet {
+	string address = 1;
+	string privateKey = 2;
 }

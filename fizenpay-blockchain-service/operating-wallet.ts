@@ -53,4 +53,37 @@ export namespace blockchain_service {
 		autoTopupThreshold?: string;
 		autoTopupAmount?: string;
 	}
+	export interface OperatingWalletService {
+		findAll(
+			data: FindAllOWRequest,
+			metadata?: Metadata,
+		): Observable<FindAllOWResponse>;
+		batchImport(
+			data: BatchImportRequest,
+			metadata?: Metadata,
+		): Observable<BatchImportResponse>;
+	}
+	// tslint:disable-next-line:no-empty-interface
+	export interface FindAllOWRequest {}
+	export interface FindAllOWResponse {
+		operatingWallets?: blockchain_service.OperatingWallet[];
+	}
+	export interface OperatingWallet {
+		id?: string;
+		name?: string;
+		index?: number;
+		activeStatus?: string;
+		commandStatus?: string;
+		createdAt?: string;
+		updatedAt?: string;
+	}
+	export interface BatchImportRequest {
+		wallets?: blockchain_service.Wallet[];
+	}
+	// tslint:disable-next-line:no-empty-interface
+	export interface BatchImportResponse {}
+	export interface Wallet {
+		address?: string;
+		privateKey?: string;
+	}
 }
