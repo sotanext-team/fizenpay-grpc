@@ -4,15 +4,17 @@ package blockchain_service;
 
 service OperatingWalletService {
   rpc FindAll (FindAllOWRequest) returns (FindAllOWResponse) {};
+  rpc GetNetworkSettings (Empty) returns (GetNetworkSettingsResponse) {};
+  rpc UpdateNetworkSettings (UpdateNetworkSettingsRequest) returns (Empty) {};
 }
+
+message Empty {}
 
 message FindAllOWRequest {
 }
-
 message FindAllOWResponse {
   repeated OperatingWallet operatingWallets = 1;
 }
-
 message OperatingWallet {
   string id = 1;
   string name =2 ;
@@ -20,5 +22,25 @@ message OperatingWallet {
   string activeStatus = 4;
   string commandStatus = 5;
   string createdAt = 6;
-  string updatedAt = 7;
+  string updatedAt = 7; 
+}
+
+message GetNetworkSettingsResponse {
+  repeated OWNetworkSettings networks = 1;
+}
+
+message OWNetworkSettings {
+  string network = 1;
+  string currency = 2;
+  bool isMainnet = 3;
+  string networkId = 4;
+  string masterOperatingWallet = 5;
+  string autoTopupThreshold = 6;
+  string autoTopupAmount = 7;
+}
+
+message UpdateNetworkSettingsRequest {
+  string network = 1;
+  string autoTopupThreshold = 2;
+  string autoTopupAmount = 3;
 }

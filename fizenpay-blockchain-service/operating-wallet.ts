@@ -11,7 +11,17 @@ export namespace blockchain_service {
 			data: FindAllOWRequest,
 			metadata?: Metadata,
 		): Observable<FindAllOWResponse>;
+		getNetworkSettings(
+			data: Empty,
+			metadata?: Metadata,
+		): Observable<GetNetworkSettingsResponse>;
+		updateNetworkSettings(
+			data: UpdateNetworkSettingsRequest,
+			metadata?: Metadata,
+		): Observable<Empty>;
 	}
+	// tslint:disable-next-line:no-empty-interface
+	export interface Empty {}
 	// tslint:disable-next-line:no-empty-interface
 	export interface FindAllOWRequest {}
 	export interface FindAllOWResponse {
@@ -25,5 +35,22 @@ export namespace blockchain_service {
 		commandStatus?: string;
 		createdAt?: string;
 		updatedAt?: string;
+	}
+	export interface GetNetworkSettingsResponse {
+		networks?: blockchain_service.OWNetworkSettings[];
+	}
+	export interface OWNetworkSettings {
+		network?: string;
+		currency?: string;
+		isMainnet?: boolean;
+		networkId?: string;
+		masterOperatingWallet?: string;
+		autoTopupThreshold?: string;
+		autoTopupAmount?: string;
+	}
+	export interface UpdateNetworkSettingsRequest {
+		network?: string;
+		autoTopupThreshold?: string;
+		autoTopupAmount?: string;
 	}
 }
