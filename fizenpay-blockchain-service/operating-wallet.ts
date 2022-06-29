@@ -48,6 +48,8 @@ export namespace blockchain_service {
         isMainnet?: boolean;
         networkId?: string;
         masterOperatingWallet?: string;
+        masterOperatingWalletThreshold?: string;
+        autoTopupStatus?: string;
         autoTopupThreshold?: string;
         autoTopupAmount?: string;
     }

@@ -47,8 +47,10 @@ message OWNetworkSettings {
   bool isMainnet = 3;
   string networkId = 4;
   string masterOperatingWallet = 5;
-  string autoTopupThreshold = 6;
-  string autoTopupAmount = 7;
+  string masterOperatingWalletThreshold = 6;
+  string autoTopupStatus = 7;
+  string autoTopupThreshold = 8;
+  string autoTopupAmount = 9;
 }
 
 message UpdateNetworkSettingsRequest {
