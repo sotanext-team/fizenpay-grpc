@@ -7,6 +7,7 @@ service OperatingWalletService {
   rpc GetNetworkSettings (Empty) returns (GetNetworkSettingsResponse) {};
   rpc UpdateNetworkSettings (UpdateNetworkSettingsRequest) returns (Empty) {};
   rpc BatchImport (BatchImportRequest) returns (BatchImportResponse) {}
+  rpc GetMasterOperatingWallet (GetMasterOperatingWalletRequest) returns (GetMasterOperatingWalletResponse) {};
 }
 
 message Empty {}
@@ -23,11 +24,20 @@ message OperatingWallet {
   string activeStatus = 4;
   string commandStatus = 5;
   string createdAt = 6;
-  string updatedAt = 7; 
+  string updatedAt = 7;
 }
 
 message GetNetworkSettingsResponse {
   repeated OWNetworkSettings networks = 1;
+}
+
+message GetMasterOperatingWalletResponse {
+  string publicKey = 1;
+  string privateKey = 2;
+}
+
+message GetMasterOperatingWalletRequest {
+  string network = 1;
 }
 
 message OWNetworkSettings {
