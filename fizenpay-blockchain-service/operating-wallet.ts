@@ -19,6 +19,10 @@ export namespace blockchain_service {
 			data: UpdateNetworkSettingsRequest,
 			metadata?: Metadata,
 		): Observable<Empty>;
+		batchImport(
+			data: BatchImportRequest,
+			metadata?: Metadata,
+		): Observable<BatchImportResponse>;
 	}
 	// tslint:disable-next-line:no-empty-interface
 	export interface Empty {}
@@ -35,6 +39,7 @@ export namespace blockchain_service {
 		commandStatus?: string;
 		createdAt?: string;
 		updatedAt?: string;
+		address?: string;
 	}
 	export interface GetNetworkSettingsResponse {
 		networks?: blockchain_service.OWNetworkSettings[];
@@ -52,30 +57,6 @@ export namespace blockchain_service {
 		network?: string;
 		autoTopupThreshold?: string;
 		autoTopupAmount?: string;
-	}
-	export interface OperatingWalletService {
-		findAll(
-			data: FindAllOWRequest,
-			metadata?: Metadata,
-		): Observable<FindAllOWResponse>;
-		batchImport(
-			data: BatchImportRequest,
-			metadata?: Metadata,
-		): Observable<BatchImportResponse>;
-	}
-	// tslint:disable-next-line:no-empty-interface
-	export interface FindAllOWRequest {}
-	export interface FindAllOWResponse {
-		operatingWallets?: blockchain_service.OperatingWallet[];
-	}
-	export interface OperatingWallet {
-		id?: string;
-		name?: string;
-		index?: number;
-		activeStatus?: string;
-		commandStatus?: string;
-		createdAt?: string;
-		updatedAt?: string;
 	}
 	export interface BatchImportRequest {
 		wallets?: blockchain_service.Wallet[];

@@ -23,7 +23,8 @@ message OperatingWallet {
   string activeStatus = 4;
   string commandStatus = 5;
   string createdAt = 6;
-  string updatedAt = 7; 
+  string updatedAt = 7;
+  string address = 8; 
 }
 
 message GetNetworkSettingsResponse {
