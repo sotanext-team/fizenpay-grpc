@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package blockchain_service;
+
+service BlockchainCommandService {
+  rpc ResolveUnlinkedByRefundToPayer (ResolveUnlinkedByRefundToPayerRequest) returns (ResolveUnlinkedByRefundToPayerResponse) {};
+}
+
+// Requests, Responses
+message ResolveUnlinkedByRefundToPayerRequest {
+  string contracAddr = 1;
+  string chargeCode = 2;
+  string action = 3;
+  string tokenAddr = 4;
+  string netValue = 5;
+  string fpMasterContract = 6;
+  int32 decimal = 7;
+  string gasLimit = 8;
+  string tokenPrice = 9;
+  string nativeTokenPrice = 10;
+  string network = 11;
+}
+message ResolveUnlinkedByRefundToPayerResponse {
+  TransactionReceipt sign = 1;
+  string amountTransfer = 2;
+  string estimateTransactionFee = 3;
+  string estimateTransactionFeeInToken = 4;
+}
+
+// Objects
+message TransactionReceipt {
+  bool status = 1;
+  string blockHash = 2;
+  int32 blockNumber = 3;
+  string transactionHash = 4;
+  int32 transactionIndex = 5;
+  string from = 6;
+  string to = 7;
+  string contractAddress = 8;
+  int64 cumulativeGasUsed = 9;
+  int64 gasUsed = 10;
+}

@@ -23,6 +23,10 @@ export namespace blockchain_service {
 			data: BatchImportRequest,
 			metadata?: Metadata,
 		): Observable<BatchImportResponse>;
+		getMasterOperatingWallet(
+			data: GetMasterOperatingWalletRequest,
+			metadata?: Metadata,
+		): Observable<GetMasterOperatingWalletResponse>;
 	}
 	// tslint:disable-next-line:no-empty-interface
 	export interface Empty {}
@@ -44,12 +48,21 @@ export namespace blockchain_service {
 	export interface GetNetworkSettingsResponse {
 		networks?: blockchain_service.OWNetworkSettings[];
 	}
+	export interface GetMasterOperatingWalletResponse {
+		publicKey?: string;
+		privateKey?: string;
+	}
+	export interface GetMasterOperatingWalletRequest {
+		network?: string;
+	}
 	export interface OWNetworkSettings {
 		network?: string;
 		currency?: string;
 		isMainnet?: boolean;
 		networkId?: string;
 		masterOperatingWallet?: string;
+		masterOperatingWalletThreshold?: string;
+		autoTopupStatus?: string;
 		autoTopupThreshold?: string;
 		autoTopupAmount?: string;
 	}
