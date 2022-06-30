@@ -25,6 +25,7 @@ type RoleServiceClient interface {
 	CheckPermission(ctx context.Context, in *CheckPermissionRequest, opts ...grpc.CallOption) (*CheckPermissionResponse, error)
 	ReloadPolicy(ctx context.Context, in *ReloadPolicyRequest, opts ...grpc.CallOption) (*ReloadPolicyResponse, error)
 	GetRolesByEmail(ctx context.Context, in *GetRolesByEmailRequest, opts ...grpc.CallOption) (*GetRolesByEmailResponse, error)
+	GetUsersByRole(ctx context.Context, in *GetUsersByRoleRequest, opts ...grpc.CallOption) (*GetUsersByRoleResponse, error)
 }
 
 type roleServiceClient struct {
@@ -62,6 +63,15 @@ func (c *roleServiceClient) GetRolesByEmail(ctx context.Context, in *GetRolesByE
 	return out, nil
 }
 
+func (c *roleServiceClient) GetUsersByRole(ctx context.Context, in *GetUsersByRoleRequest, opts ...grpc.CallOption) (*GetUsersByRoleResponse, error) {
+	out := new(GetUsersByRoleResponse)
+	err := c.cc.Invoke(ctx, "/fizenpay_auth.RoleService/GetUsersByRole", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RoleServiceServer is the server API for RoleService service.
 // All implementations must embed UnimplementedRoleServiceServer
 // for forward compatibility
@@ -69,6 +79,7 @@ type RoleServiceServer interface {
 	CheckPermission(context.Context, *CheckPermissionRequest) (*CheckPermissionResponse, error)
 	ReloadPolicy(context.Context, *ReloadPolicyRequest) (*ReloadPolicyResponse, error)
 	GetRolesByEmail(context.Context, *GetRolesByEmailRequest) (*GetRolesByEmailResponse, error)
+	GetUsersByRole(context.Context, *GetUsersByRoleRequest) (*GetUsersByRoleResponse, error)
 	mustEmbedUnimplementedRoleServiceServer()
 }
 
@@ -84,6 +95,9 @@ func (UnimplementedRoleServiceServer) ReloadPolicy(context.Context, *ReloadPolic
 }
 func (UnimplementedRoleServiceServer) GetRolesByEmail(context.Context, *GetRolesByEmailRequest) (*GetRolesByEmailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRolesByEmail not implemented")
+}
+func (UnimplementedRoleServiceServer) GetUsersByRole(context.Context, *GetUsersByRoleRequest) (*GetUsersByRoleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUsersByRole not implemented")
 }
 func (UnimplementedRoleServiceServer) mustEmbedUnimplementedRoleServiceServer() {}
 
@@ -152,6 +166,24 @@ func _RoleService_GetRolesByEmail_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RoleService_GetUsersByRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUsersByRoleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoleServiceServer).GetUsersByRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/fizenpay_auth.RoleService/GetUsersByRole",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoleServiceServer).GetUsersByRole(ctx, req.(*GetUsersByRoleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // RoleService_ServiceDesc is the grpc.ServiceDesc for RoleService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -170,6 +202,10 @@ var RoleService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetRolesByEmail",
 			Handler:    _RoleService_GetRolesByEmail_Handler,
+		},
+		{
+			MethodName: "GetUsersByRole",
+			Handler:    _RoleService_GetUsersByRole_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
