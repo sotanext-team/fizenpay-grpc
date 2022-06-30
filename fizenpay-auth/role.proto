@@ -8,6 +8,21 @@ service RoleService {
   rpc CheckPermission (CheckPermissionRequest) returns (CheckPermissionResponse) {}
   rpc ReloadPolicy (ReloadPolicyRequest) returns (ReloadPolicyResponse) {}
   rpc GetRolesByEmail (GetRolesByEmailRequest) returns (GetRolesByEmailResponse) {}
+  rpc GetUsersByRole (GetUsersByRoleRequest) returns (GetUsersByRoleResponse) {}
+}
+
+message GetUsersByRoleRequest {
+	string domain = 1;
+	string role = 2;
+}
+
+message GetUsersByRoleResponse {
+	repeated UserRole users = 1;
+}
+
+message UserRole {
+	string email = 1;
+	string role = 2;
 }
 
 message CheckPermissionRequest {
