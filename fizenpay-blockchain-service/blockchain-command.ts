@@ -19,6 +19,10 @@ export namespace blockchain_service {
 			data: CloseMerchantRequest,
 			metadata?: Metadata,
 		): Observable<CloseMerchantResponse>;
+		updateDefaultFizenpayServiceFee(
+			data: UpdateDefaultFizenpayServiceFeeRequest,
+			metadata?: Metadata,
+		): Observable<UpdateDefaultFizenpayServiceFeeResponse>;
 	}
 	// Requests, Responses
 	export interface ResolveUnlinkedByRefundToPayerRequest {
@@ -63,6 +67,13 @@ export namespace blockchain_service {
 	}
 	// tslint:disable-next-line:no-empty-interface
 	export interface CloseMerchantResponse {}
+	export interface UpdateDefaultFizenpayServiceFeeRequest {
+		network?: string;
+		fpMasterContract?: string;
+		serviceFeePerc?: string;
+	}
+	// tslint:disable-next-line:no-empty-interface
+	export interface UpdateDefaultFizenpayServiceFeeResponse {}
 	// Objects
 	export interface TransactionReceipt {
 		status?: boolean;

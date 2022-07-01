@@ -6,6 +6,7 @@ service BlockchainCommandService {
   rpc ResolveUnlinkedByRefundToPayer (ResolveUnlinkedByRefundToPayerRequest) returns (ResolveUnlinkedByRefundToPayerResponse) {};
   rpc ResolveUnlinkedBySendToFizen (ResolveUnlinkedBySendToFizenRequest) returns (ResolveUnlinkedBySendToFizenResponse) {};
   rpc CloseMerchant (CloseMerchantRequest) returns (CloseMerchantResponse) {};
+  rpc UpdateDefaultFizenpayServiceFee (UpdateDefaultFizenpayServiceFeeRequest) returns (UpdateDefaultFizenpayServiceFeeResponse) {};
 }
 
 // Requests, Responses
@@ -51,6 +52,13 @@ message CloseMerchantRequest {
   bool status = 4;
 }
 message CloseMerchantResponse {}
+
+message UpdateDefaultFizenpayServiceFeeRequest {
+  string network = 1;
+  string fpMasterContract = 2;
+  string serviceFeePerc = 3;
+}
+message UpdateDefaultFizenpayServiceFeeResponse {}
 
 // Objects
 message TransactionReceipt {
