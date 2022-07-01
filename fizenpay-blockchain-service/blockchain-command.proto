@@ -1,9 +1,10 @@
 syntax = "proto3";
-
+// import "operating-wallet.proto";
 package blockchain_service;
 
 service BlockchainCommandService {
   rpc ResolveUnlinkedByRefundToPayer (ResolveUnlinkedByRefundToPayerRequest) returns (ResolveUnlinkedByRefundToPayerResponse) {};
+  rpc CloseMerchant (CloseMerchantRequest) returns (CloseMerchantResponse) {};
 }
 
 // Requests, Responses
@@ -26,6 +27,14 @@ message ResolveUnlinkedByRefundToPayerResponse {
   string estimateTransactionFee = 3;
   string estimateTransactionFeeInToken = 4;
 }
+
+message CloseMerchantRequest {
+  string network = 1;
+  string fpMasterContract = 2;
+  string merchantContract = 3;
+  bool status = 4;
+}
+message CloseMerchantResponse {}
 
 // Objects
 message TransactionReceipt {

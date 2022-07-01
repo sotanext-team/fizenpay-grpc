@@ -11,6 +11,10 @@ export namespace blockchain_service {
 			data: ResolveUnlinkedByRefundToPayerRequest,
 			metadata?: Metadata,
 		): Observable<ResolveUnlinkedByRefundToPayerResponse>;
+		closeMerchant(
+			data: CloseMerchantRequest,
+			metadata?: Metadata,
+		): Observable<CloseMerchantResponse>;
 	}
 	// Requests, Responses
 	export interface ResolveUnlinkedByRefundToPayerRequest {
@@ -32,6 +36,14 @@ export namespace blockchain_service {
 		estimateTransactionFee?: string;
 		estimateTransactionFeeInToken?: string;
 	}
+	export interface CloseMerchantRequest {
+		network?: string;
+		fpMasterContract?: string;
+		merchantContract?: string;
+		status?: boolean;
+	}
+	// tslint:disable-next-line:no-empty-interface
+	export interface CloseMerchantResponse {}
 	// Objects
 	export interface TransactionReceipt {
 		status?: boolean;
