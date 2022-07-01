@@ -4,6 +4,7 @@ package blockchain_service;
 
 service BlockchainCommandService {
   rpc ResolveUnlinkedByRefundToPayer (ResolveUnlinkedByRefundToPayerRequest) returns (ResolveUnlinkedByRefundToPayerResponse) {};
+  rpc ResolveUnlinkedBySendToFizen (ResolveUnlinkedBySendToFizenRequest) returns (ResolveUnlinkedBySendToFizenResponse) {};
   rpc CloseMerchant (CloseMerchantRequest) returns (CloseMerchantResponse) {};
 }
 
@@ -26,6 +27,21 @@ message ResolveUnlinkedByRefundToPayerResponse {
   string amountTransfer = 2;
   string estimateTransactionFee = 3;
   string estimateTransactionFeeInToken = 4;
+}
+message ResolveUnlinkedBySendToFizenRequest {
+  string network = 1;
+  string contracAddr = 2;
+  string chargeCode = 3;
+  string action = 4;
+  string tokenAddr = 5;
+  string netValue = 6;
+  string fpMasterContract = 7;
+  int32 decimal = 8;
+  string gasLimit = 9;
+}
+message ResolveUnlinkedBySendToFizenResponse {
+  TransactionReceipt sign = 1;
+  string amountTransfer = 2;
 }
 
 message CloseMerchantRequest {

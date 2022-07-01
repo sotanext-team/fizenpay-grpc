@@ -11,6 +11,10 @@ export namespace blockchain_service {
 			data: ResolveUnlinkedByRefundToPayerRequest,
 			metadata?: Metadata,
 		): Observable<ResolveUnlinkedByRefundToPayerResponse>;
+		resolveUnlinkedBySendToFizen(
+			data: ResolveUnlinkedBySendToFizenRequest,
+			metadata?: Metadata,
+		): Observable<ResolveUnlinkedBySendToFizenResponse>;
 		closeMerchant(
 			data: CloseMerchantRequest,
 			metadata?: Metadata,
@@ -35,6 +39,21 @@ export namespace blockchain_service {
 		amountTransfer?: string;
 		estimateTransactionFee?: string;
 		estimateTransactionFeeInToken?: string;
+	}
+	export interface ResolveUnlinkedBySendToFizenRequest {
+		network?: string;
+		contracAddr?: string;
+		chargeCode?: string;
+		action?: string;
+		tokenAddr?: string;
+		netValue?: string;
+		fpMasterContract?: string;
+		decimal?: number;
+		gasLimit?: string;
+	}
+	export interface ResolveUnlinkedBySendToFizenResponse {
+		sign?: blockchain_service.TransactionReceipt;
+		amountTransfer?: string;
 	}
 	export interface CloseMerchantRequest {
 		network?: string;
