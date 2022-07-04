@@ -23,6 +23,22 @@ export namespace blockchain_service {
 			data: UpdateDefaultFizenpayServiceFeeRequest,
 			metadata?: Metadata,
 		): Observable<UpdateDefaultFizenpayServiceFeeResponse>;
+		initMerchant(
+			data: InitMerchantRequest,
+			metadata?: Metadata,
+		): Observable<InitMerchantResponse>;
+		flushCryptoToMerchant(
+			data: FlushCryptoToMerchantRequest,
+			metadata?: Metadata,
+		): Observable<FlushCryptoToMerchantResponse>;
+		setupFizenpayServiceFee(
+			data: SetupFizenpayServiceFeeRequest,
+			metadata?: Metadata,
+		): Observable<SetupFizenpayServiceFeeResponse>;
+		withdrawFizenpayServiceFee(
+			data: WithdrawFizenpayServiceFeeRequest,
+			metadata?: Metadata,
+		): Observable<WithdrawFizenpayServiceFeeResponse>;
 	}
 	// Requests, Responses
 	export interface ResolveUnlinkedByRefundToPayerRequest {
@@ -74,6 +90,55 @@ export namespace blockchain_service {
 	}
 	// tslint:disable-next-line:no-empty-interface
 	export interface UpdateDefaultFizenpayServiceFeeResponse {}
+	export interface InitMerchantRequest {
+		network?: string;
+		fpMasterContract?: string;
+		merchantWallet?: string;
+	}
+	export interface InitMerchantResponse {
+		txHash?: string;
+	}
+	export interface FlushCryptoToMerchantRequest {
+		network?: string;
+		fpMasterContract?: string;
+		merchantContract?: string;
+		tokenAddr?: string;
+		tokenPrice?: string;
+		nativeTokenPrice?: string;
+		amount?: string;
+		decimal?: number;
+		gasLimit?: string;
+	}
+	export interface FlushCryptoToMerchantResponse {
+		sign?: blockchain_service.TransactionReceipt;
+		estimateTransactionFee?: string;
+		estimateTransactionFeeInToken?: string;
+		estimateGasPrice?: string;
+		estimateGasLimit?: string;
+		realTransactionFee?: string;
+		realGasPrice?: string;
+		realGasLimit?: string;
+		realGasUsed?: string;
+		amountTransfer?: string;
+	}
+	export interface SetupFizenpayServiceFeeRequest {
+		network?: string;
+		fpMasterContract?: string;
+		merchantContract?: string;
+		serviceFee?: string;
+	}
+	export interface SetupFizenpayServiceFeeResponse {
+		sign?: blockchain_service.TransactionReceipt;
+	}
+	export interface WithdrawFizenpayServiceFeeRequest {
+		network?: string;
+		fpMasterContract?: string;
+		merchantContract?: string;
+		tokenAddr?: string;
+	}
+	export interface WithdrawFizenpayServiceFeeResponse {
+		sign?: blockchain_service.TransactionReceipt;
+	}
 	// Objects
 	export interface TransactionReceipt {
 		status?: boolean;

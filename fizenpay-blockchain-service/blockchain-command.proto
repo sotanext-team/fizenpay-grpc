@@ -7,6 +7,10 @@ service BlockchainCommandService {
   rpc ResolveUnlinkedBySendToFizen (ResolveUnlinkedBySendToFizenRequest) returns (ResolveUnlinkedBySendToFizenResponse) {};
   rpc CloseMerchant (CloseMerchantRequest) returns (CloseMerchantResponse) {};
   rpc UpdateDefaultFizenpayServiceFee (UpdateDefaultFizenpayServiceFeeRequest) returns (UpdateDefaultFizenpayServiceFeeResponse) {};
+  rpc InitMerchant (InitMerchantRequest) returns (InitMerchantResponse) {};
+  rpc FlushCryptoToMerchant (FlushCryptoToMerchantRequest) returns (FlushCryptoToMerchantResponse) {};
+  rpc SetupFizenpayServiceFee (SetupFizenpayServiceFeeRequest) returns (SetupFizenpayServiceFeeResponse) {};
+  rpc WithdrawFizenpayServiceFee (WithdrawFizenpayServiceFeeRequest) returns (WithdrawFizenpayServiceFeeResponse) {};
 }
 
 // Requests, Responses
@@ -59,6 +63,59 @@ message UpdateDefaultFizenpayServiceFeeRequest {
   string serviceFeePerc = 3;
 }
 message UpdateDefaultFizenpayServiceFeeResponse {}
+
+message InitMerchantRequest {
+  string network = 1;
+  string fpMasterContract = 2;
+  string merchantWallet = 3;
+}
+message InitMerchantResponse {
+  string txHash = 1;
+}
+
+message FlushCryptoToMerchantRequest {
+  string network = 1;
+  string fpMasterContract = 2;
+  string merchantContract = 3;
+  string tokenAddr = 4;
+  string tokenPrice = 5;
+  string nativeTokenPrice = 6;
+  string amount = 7;
+  int32 decimal = 8;
+  string gasLimit = 9;
+}
+message FlushCryptoToMerchantResponse {
+  TransactionReceipt sign = 1;
+  string estimateTransactionFee = 2;
+  string estimateTransactionFeeInToken = 3;
+  string estimateGasPrice = 4;
+  string estimateGasLimit = 5;
+  string realTransactionFee = 6;
+  string realGasPrice = 7;
+  string realGasLimit = 8;
+  string realGasUsed = 9;
+  string amountTransfer = 10;
+}
+
+message SetupFizenpayServiceFeeRequest {
+  string network = 1;
+  string fpMasterContract = 2;
+  string merchantContract = 3;
+  string serviceFee = 4;
+}
+message SetupFizenpayServiceFeeResponse {
+  TransactionReceipt sign = 1;
+}
+
+message WithdrawFizenpayServiceFeeRequest {
+  string network = 1;
+  string fpMasterContract = 2;
+  string merchantContract = 3;
+  string tokenAddr = 4;
+}
+message WithdrawFizenpayServiceFeeResponse {
+  TransactionReceipt sign = 1;
+}
 
 // Objects
 message TransactionReceipt {
