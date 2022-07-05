@@ -25,10 +25,10 @@ export namespace blockchain_service {
     }
     export interface TransactionHistory {
         id?: string;
-        rawData?: google.protobuf.Any;
-        details?: google.protobuf.Any;
-        receiptLogs?: google.protobuf.Any;
-        tokenInfo?: google.protobuf.Any;
+        rawData?: blockchain_service.RawData;
+        details?: blockchain_service.Details;
+        receiptLogs?: blockchain_service.ReceiptLogs;
+        tokenInfo?: blockchain_service.TokenInfo;
         methodName?: string;
         hash?: string;
         network?: string;
@@ -43,6 +43,76 @@ export namespace blockchain_service {
         createdAt?: google.protobuf.Timestamp;
         updatedAt?: google.protobuf.Timestamp;
     }
+    export interface RawData {
+        blockNumber?: string;
+        timeStamp?: string;
+        hash?: string;
+        nonce?: string;
+        blockHash?: string;
+        transactionIndex?: string;
+        from?: string;
+        to?: string;
+        value?: string;
+        gas?: string;
+        gasPrice?: string;
+        isError?: string;
+        txreceiptStatus?: string;
+        input?: string;
+        contractAddress?: string;
+        cumulativeGasUsed?: string;
+        gasUsed?: string;
+        confirmations?: string;
+    }
+    export interface Details {
+        blockHash?: string;
+        blockNumber?: string;
+        from?: string;
+        gas?: number;
+        gasPrice?: string;
+        hash?: string;
+        input?: string;
+        nonce?: number;
+        to?: string;
+        transactionIndex?: number;
+        value?: string;
+        type?: number;
+        v?: string;
+        r?: string;
+        s?: string;
+    }
+    export interface ReceiptLogs {
+        blockHash?: string;
+        blockNumber?: number;
+        contractAddress?: string;
+        cumulativeGasUsed?: number;
+        effectiveGasPrice?: number;
+        from?: string;
+        gasUsed?: number;
+        logs?: blockchain_service.Log[];
+        logsBloom?: string;
+        status?: string;
+        to?: string;
+        transactionHash?: string;
+        transactionIndex?: number;
+        type?: string;
+    }
+    export interface Log {
+        address?: string;
+        topics?: string[];
+        data?: string;
+        blockNumber?: number;
+        transactionHash?: string;
+        transactionIndex?: number;
+        blockHash?: string;
+        logIndex?: number;
+        removed?: boolean;
+        id?: string;
+    }
+    export interface TokenInfo {
+        name?: string;
+        symbol?: string;
+        decimals?: string;
+    }
 }
 export namespace google {
     export namespace protobuf {
@@ -53,6 +123,23 @@ export namespace google {
         export interface Timestamp {
             seconds?: number;
             nanos?: number;
+        }
+        export interface Struct {
+            fields?: { [key: string]: google.protobuf.Value };
+        }
+        export interface Value {
+            nullValue?: google.protobuf.NullValue;
+            numberValue?: number;
+            stringValue?: string;
+            boolValue?: boolean;
+            structValue?: google.protobuf.Struct;
+            listValue?: google.protobuf.ListValue;
+        }
+        export enum NullValue {
+            NULL_VALUE = 0,
+        }
+        export interface ListValue {
+            values?: google.protobuf.Value[];
         }
     }
 }
