@@ -21,7 +21,7 @@ export namespace blockchain_service {
     }
     export interface GetTransactionsResponse {
         transactions?: blockchain_service.TransactionHistory[];
-        total?: number[];
+        total?: number;
     }
     export interface TransactionHistory {
         id?: string;
