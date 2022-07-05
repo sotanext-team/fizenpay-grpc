@@ -25,7 +25,7 @@ message GetTransactionsRequest {
 
 message GetTransactionsResponse {
 	repeated TransactionHistory transactions = 1;
-	repeated int32 total = 2;
+	int32 total = 2;
 }
 
 message TransactionHistory {
