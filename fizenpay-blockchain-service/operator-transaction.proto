@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package blockchain_service;
+
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/sotanext-team/fizenpay-grpc/fizenpay-blockchain-service;blockchain_service";
+
+service OperatorTransactionProto {
+	rpc GetTransactions (GetTransactionsRequest) returns (GetTransactionsResponse) {}
+}
+
+message GetTransactionsRequest {
+	string operatorAddress = 1;
+	int32 page = 2;
+	int32 limit = 3;
+	string event = 4;
+	string from = 5;
+	string to = 6;
+	string hash = 7;
+	string merchantContract = 8;
+}
+
+message GetTransactionsResponse {
+	repeated TransactionHistory transactions = 1;
+	repeated int32 total = 2;
+}
+
+message TransactionHistory {
+	string id = 1;
+	google.protobuf.Any rawData = 2;
+	google.protobuf.Any details = 3;
+	google.protobuf.Any receiptLogs = 4;
+	google.protobuf.Any tokenInfo = 5;
+	string methodName = 6;
+	string hash = 7;
+	string network = 8;
+	google.protobuf.Timestamp blockTimestamp = 9;
+	string blockNumber = 10;
+	string blockHash = 11;
+	string inputHash = 12;
+	string operator = 13;
+	string merchantContract = 14;
+	string from = 15;
+	string to = 16;
+	google.protobuf.Timestamp createdAt = 17;
+	google.protobuf.Timestamp updatedAt = 18;
+}
