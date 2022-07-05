@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Metadata } from '@grpc/grpc-js';
 
 export namespace blockchain_service {
-    export interface OperatorTransactionProto {
+    export interface OperatorTransactionService {
         getTransactions(data: GetTransactionsRequest, metadata?: Metadata): Observable<GetTransactionsResponse>;
     }
     export interface GetTransactionsRequest {
