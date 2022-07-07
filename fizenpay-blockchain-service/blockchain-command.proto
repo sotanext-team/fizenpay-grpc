@@ -129,4 +129,5 @@ message TransactionReceipt {
   string contractAddress = 8;
   int64 cumulativeGasUsed = 9;
   int64 gasUsed = 10;
+  string operatorAddress = 11;
 }
