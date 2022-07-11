@@ -21,6 +21,7 @@ message GetTransactionsRequest {
 	string to = 6;
 	string hash = 7;
 	string merchantContract = 8;
+	bool transfer = 9;
 }
 
 message GetTransactionsResponse {
@@ -37,7 +38,7 @@ message TransactionHistory {
 	string methodName = 6;
 	string hash = 7;
 	string network = 8;
-	google.protobuf.Timestamp blockTimestamp = 9;
+	string blockTimestamp = 9;
 	string blockNumber = 10;
 	string blockHash = 11;
 	string inputHash = 12;

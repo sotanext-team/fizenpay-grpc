@@ -18,6 +18,7 @@ export namespace blockchain_service {
         to?: string;
         hash?: string;
         merchantContract?: string;
+        transfer?: boolean;
     }
     export interface GetTransactionsResponse {
         transactions?: blockchain_service.TransactionHistory[];
@@ -32,7 +33,7 @@ export namespace blockchain_service {
         methodName?: string;
         hash?: string;
         network?: string;
-        blockTimestamp?: google.protobuf.Timestamp;
+        blockTimestamp?: string;
         blockNumber?: string;
         blockHash?: string;
         inputHash?: string;
