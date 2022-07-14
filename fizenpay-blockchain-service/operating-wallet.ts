@@ -12,6 +12,8 @@ export namespace blockchain_service {
         updateNetworkSettings(data: UpdateNetworkSettingsRequest, metadata?: Metadata): Observable<Empty>;
         batchImport(data: BatchImportRequest, metadata?: Metadata): Observable<BatchImportResponse>;
         getMasterOperatingWallet(data: GetMasterOperatingWalletRequest, metadata?: Metadata): Observable<GetMasterOperatingWalletResponse>;
+        createChainSettings(data: CreateChainSettingsRequest, metadata?: Metadata): Observable<CreateChainSettingsResponse>;
+        updateChainSettings(data: UpdateChainSettingsRequest, metadata?: Metadata): Observable<UpdateChainSettingsResponse>;
     }
     // tslint:disable-next-line:no-empty-interface
     export interface Empty {
@@ -57,6 +59,32 @@ export namespace blockchain_service {
         network?: string;
         autoTopupThreshold?: string;
         autoTopupAmount?: string;
+    }
+    export interface CreateChainSettingsRequest {
+        network?: string;
+        currency?: string;
+        isMainnet?: boolean;
+        networkId?: string;
+        provider?: string;
+        wssProvider?: string;
+        fpMasterContract?: string;
+        transactionUrl?: string;
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface CreateChainSettingsResponse {
+    }
+    export interface UpdateChainSettingsRequest {
+        network?: string;
+        currency?: string;
+        isMainnet?: boolean;
+        networkId?: string;
+        provider?: string;
+        wssProvider?: string;
+        fpMasterContract?: string;
+        transactionUrl?: string;
+    }
+    // tslint:disable-next-line:no-empty-interface
+    export interface UpdateChainSettingsResponse {
     }
     export interface BatchImportRequest {
         wallets?: blockchain_service.Wallet[];

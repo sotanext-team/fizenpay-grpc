@@ -8,6 +8,8 @@ service OperatingWalletService {
   rpc UpdateNetworkSettings (UpdateNetworkSettingsRequest) returns (Empty) {};
   rpc BatchImport (BatchImportRequest) returns (BatchImportResponse) {}
   rpc GetMasterOperatingWallet (GetMasterOperatingWalletRequest) returns (GetMasterOperatingWalletResponse) {};
+  rpc CreateChainSettings(CreateChainSettingsRequest) returns (CreateChainSettingsResponse) {};
+  rpc UpdateChainSettings(UpdateChainSettingsRequest) returns (UpdateChainSettingsResponse) {};
 }
 
 message Empty {}
@@ -58,13 +60,35 @@ message UpdateNetworkSettingsRequest {
   string autoTopupThreshold = 2;
   string autoTopupAmount = 3;
 }
+
+message CreateChainSettingsRequest {
+  string network = 1;
+  string currency = 2;
+  bool isMainnet = 3;
+  string networkId = 4;
+  string provider = 5;
+  string wssProvider = 6;
+  string fpMasterContract = 7;
+  string transactionUrl = 8;
+}
+message CreateChainSettingsResponse {}
+
+message UpdateChainSettingsRequest {
+  string network = 1;
+  string currency = 2;
+  bool isMainnet = 3;
+  string networkId = 4;
+  string provider = 5;
+  string wssProvider = 6;
+  string fpMasterContract = 7;
+  string transactionUrl = 8;
+}
+message UpdateChainSettingsResponse {}
+
 message BatchImportRequest {
 	repeated Wallet wallets = 1;
 }
-
-message BatchImportResponse {
-
-}
+message BatchImportResponse {}
 
 message Wallet {
 	string address = 1;
