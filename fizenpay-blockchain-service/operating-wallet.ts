@@ -54,6 +54,7 @@ export namespace blockchain_service {
         autoTopupStatus?: string;
         autoTopupThreshold?: string;
         autoTopupAmount?: string;
+        decimal?: number;
     }
     export interface UpdateNetworkSettingsRequest {
         network?: string;
@@ -69,6 +70,7 @@ export namespace blockchain_service {
         wssProvider?: string;
         fpMasterContract?: string;
         transactionUrl?: string;
+        decimal?: number;
     }
     // tslint:disable-next-line:no-empty-interface
     export interface CreateChainSettingsResponse {
@@ -82,6 +84,7 @@ export namespace blockchain_service {
         wssProvider?: string;
         fpMasterContract?: string;
         transactionUrl?: string;
+        decimal?: number;
     }
     // tslint:disable-next-line:no-empty-interface
     export interface UpdateChainSettingsResponse {

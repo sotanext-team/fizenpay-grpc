@@ -53,6 +53,7 @@ message OWNetworkSettings {
   string autoTopupStatus = 7;
   string autoTopupThreshold = 8;
   string autoTopupAmount = 9;
+  int32 decimal = 10;
 }
 
 message UpdateNetworkSettingsRequest {
@@ -70,6 +71,7 @@ message CreateChainSettingsRequest {
   string wssProvider = 6;
   string fpMasterContract = 7;
   string transactionUrl = 8;
+  int32 decimal = 9;
 }
 message CreateChainSettingsResponse {}
 
@@ -82,6 +84,7 @@ message UpdateChainSettingsRequest {
   string wssProvider = 6;
   string fpMasterContract = 7;
   string transactionUrl = 8;
+  int32 decimal = 9;
 }
 message UpdateChainSettingsResponse {}
 
