@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package fizen_admin_api;
+
+import "google/protobuf/timestamp.proto";
+
+
+service AdminTokenService {
+  rpc VerifyAdminToken (VerifyAdminTokenRequest) returns (VerifyAdminTokenResponse) {}
+}
+
+message VerifyAdminTokenRequest {
+  string token = 1;
+}
+
+message VerifyAdminTokenResponse {
+  string id = 1;
+  string email = 2;
+  string firstName = 3;
+  string lastName = 4;
+  string createdAt = 5;
+  string updatedAt = 6;
+  string lastLoginAt = 7;
+}
