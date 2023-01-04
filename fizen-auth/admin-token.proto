@@ -7,6 +7,7 @@ import "google/protobuf/timestamp.proto";
 
 service AdminTokenService {
   rpc VerifyAdminToken (VerifyAdminTokenRequest) returns (VerifyAdminTokenResponse) {}
+  rpc GenerateToken(GenerateTokenRequest) returns (GenerateTokenResponse) {}
 }
 
 message VerifyAdminTokenRequest {
@@ -21,4 +22,16 @@ message VerifyAdminTokenResponse {
   string createdAt = 5;
   string updatedAt = 6;
   string lastLoginAt = 7;
+}
+
+message GenerateTokenRequest {
+	string email = 1;
+	string firstName = 2;
+	string lastName = 3;
+	string picture = 4;
+	string accessToken = 5;
+}
+
+message GenerateTokenResponse {
+	string token = 1;
 }
