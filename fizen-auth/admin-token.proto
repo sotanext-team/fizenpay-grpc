@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package fizen_admin_api;
+package fizen_auth;
 
 import "google/protobuf/timestamp.proto";
 

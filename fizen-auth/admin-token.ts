@@ -5,7 +5,7 @@
 import { Observable } from 'rxjs';
 import { Metadata } from '@grpc/grpc-js';
 
-export namespace fizen_admin_api {
+export namespace fizen_auth {
     export interface AdminTokenService {
         verifyAdminToken(data: VerifyAdminTokenRequest, metadata?: Metadata): Observable<VerifyAdminTokenResponse>;
     }
